@@ -9,7 +9,7 @@ class Profile(models.Model):
     
     user = models.OneToOneField(User, related_name="profile")
     ACCOUNT_TYPE = ((u'journalist', u'journalist'),(u'Content Provider', u'Content Provider'))
-    usergroup = models.CharField(choices=ACCOUNT_TYPE,max_length=20,null=False)
+    usergroup = models.CharField(choices=ACCOUNT_TYPE,max_length=20,null=True)
     birthdate = models.DateField(null=True, blank=True)
     def __unicode__(self):
         return u'%s %s' %(self.user.first_name,self.user.last_name)
