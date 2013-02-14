@@ -1,0 +1,66 @@
+{% extends "site_base.html" %}
+
+{% block body %}
+    Search Articles
+    <form action="" method="get">
+        <div class="row">
+        <div class="span4">
+        <label for="id_profile">Journalist:</label>
+        {{ filter.form.profile }}
+        </div>
+                <div class="span4">
+        <label for="id_category">Category:</label>
+        {{ filter.form.category }}
+        </div>
+                        <div class="span4">
+        <label for="id_sector">Sector:</label>
+        {{ filter.form.sector }}
+        </div>
+        <div class="span4">
+        <label for="id_company">Company:</label>
+        {{ filter.form.company }}
+        </div>
+                <div class="span4">
+        <label for="id_media">Media Brand:</label>
+        {{ filter.form.mediabrand }}
+        </div>
+
+        </div>
+        <div class="row">
+        <div class="span4">
+        <input type="submit" value="Search" /></div>
+        </div>
+    </form>
+    <h1>Articles</h1>
+    <div class="row">
+    <div class="span4">
+   <a href="{% url content-form %} ">New</a> </div>
+    </div>
+    <div class="row">
+            <div class="span2">
+        <h3>Journalist</h3></div>
+                <div class="span2">
+        <h3>Sector</h3></div>
+                <div class="span2">
+        <h3>Media Brand</h3></div>
+                <div class="span2">
+        <h3>Article Title</h3></div>
+                <div class="span4">
+        <h3>Article Summary</h3></div>
+
+    </div>
+    {% for obj in filter %}
+        <div class="row">
+        <div class="span2">
+        {{ obj.profile }}</div>
+                <div class="span2">
+        {{ obj.sector }}</div>
+                <div class="span2">
+        {{ obj.mediabrand }}</div>
+                <div class="span2"><a href="{{obj.id}}">
+        {{ obj.title }}</a></div>
+                <div class="span4">
+        {{ obj.article_summary|truncatechars:20 }}</div>
+        </div>
+    {% endfor %}
+{% endblock %}
