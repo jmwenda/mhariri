@@ -63,7 +63,7 @@ class Article(models.Model):
     article = models.TextField("Article Full Text")
     article_link = models.URLField("Article URI",blank=True)
     article_pdf = models.FileField("Article PDF",upload_to='resources',blank=True)
-    article_page = models.IntegerField(null=True)
+    article_page = models.IntegerField(blank=True)
     article_size = models.CharField("Article Size",max_length=25,blank=True)
     TONALITY_TYPE = ((u'POSITIVE', u'POSITIVE'),(u'NEGATIVE', u'NEGATIVE'))
     tonality = models.CharField(choices=TONALITY_TYPE,max_length=20,null=False)
