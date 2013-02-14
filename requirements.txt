@@ -1,12 +1,13 @@
---extra-index-url=http://dist.pinaxproject.com/dev/
---extra-index-url=http://dist.pinaxproject.com/alpha/
-
 Django==1.4.3
+dj-database-url==0.2.1
+django-appconf==0.5
+-e git+https://github.com/alex/django-filter.git@460927402551ca7f9e77fb2092ee9bcd039dbfe6#egg=django_filter-dev
+django-forms-bootstrap==2.0.3.post1
+django-user-accounts==1.0b4
+metron==1.0
 pinax-theme-bootstrap==2.2.2
 pinax-theme-bootstrap-account==1.0b2
-django-user-accounts==1.0b4
-django-forms-bootstrap==2.0.3.post1
-metron==1.0
 pinax-utils==1.0b1.dev3
-psycopg2==2.4.5
-dj-database-url==0.2.0
+psycopg2==2.4.6
+pytz==2012d
+wsgiref==0.1.2
