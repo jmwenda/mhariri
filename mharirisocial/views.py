@@ -15,6 +15,7 @@ class SignupView(account.views.SignupView):
     def create_profile(self, form):
         profile = self.created_user.profile
         profile.birthdate = form.cleaned_data["birthdate"]
+        profile.usergroup = 'journalist'
         profile.save()
 
 class ArticleFilter(django_filters.FilterSet):
