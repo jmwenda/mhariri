@@ -68,7 +68,10 @@ class Article(models.Model):
     TONALITY_TYPE = ((u'POSITIVE', u'POSITIVE'),(u'NEGATIVE', u'NEGATIVE'))
     tonality = models.CharField(choices=TONALITY_TYPE,max_length=20,null=False)
     sector = models.ForeignKey(Sector)
-    relevance = models.IntegerField("Relevance",blank=True) 
+    relevance = models.CharField("Relevance",blank=True) 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('content',(),{})
 
 class Awards(models.Model):
     profile=models.ForeignKey(Profile)
