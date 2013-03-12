@@ -1,0 +1,43 @@
+{% extends "site_base.html" %}
+
+	{% block body %}
+	<div>
+	    <h2>Profile</h2>
+	    <div class="row">
+	    <div class="span4">
+	    <p>Name: {{request.user.first_name }} {{ request.user.last_name}}</p>
+	    <p>Date of Birth: {{request.user.profile.birthdate }}</p>
+	    <img src="http://www.googlelunarxprize.org/sites/googlelunarxprize.org/files/styles/profile_picture/public/default-profile.jpg" width="100px" height="100px">
+	    <h3>Education</h3>
+	    <h4><a href="{{request.user}}/education/new/">Add Education</a></h4>
+	     {% for job in employment %}
+		    <ul>{{ job.employer }}</ul>
+		  {{ job.startdate}} - {{ job.enddata}} 
+		{% endfor %} 
+	    <h3>Awards</h3>
+	    <h4><a href="{{request.user}}/award/new/">Add Award</a></h4>
+	     {% for award in awards %}
+		    <ul>{{ award.award }} - {{ award.year.year}}</ul>
+		{% endfor %}
+	    <h3>Company Mentions</h3>
+	    {% for article in articles %}
+	       {% for company in article.company.all %}
+                   <ul>{{ company.company }} - {{article.company.count}}</ul>
+         
+       {% endfor %}
+    {% endfor %} 
+    </div>
+    <div class="span8">
+    <h2>Written Articles</h2>
+    <div>
+     {% for article in articles %}
+            <h4>{{ article.title }}</h4>
+            {{ article.published}}
+            <p> {{ article.article_summary}} <a href="">More</a></p>
+        {% endfor %} 
+    </div>
+    </div>
+    </div>
+</div>
+</body>
+{% endblock %}

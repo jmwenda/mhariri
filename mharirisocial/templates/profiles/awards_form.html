@@ -1,0 +1,12 @@
+{% extends "site_base.html" %}
+{% block body %}
+
+Add Award
+<form class=".form-vertical" action="" method="post"  enctype="multipart/form-data">{% csrf_token %} 
+<input type="hidden" name="profile" id="id_profile" value={{ request.user.profile.pk}}>
+<tr><th><label for="id_startdate">Award:</label></th><td>{{ form.award}}</td></tr>
+<tr><th><label for="id_enddata">Date:</label></th><td>{{ form.year}} </td></tr>
+<input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

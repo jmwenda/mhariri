@@ -11,6 +11,7 @@ class Profile(models.Model):
     ACCOUNT_TYPE = ((u'journalist', u'journalist'),(u'Content Provider', u'Content Provider'))
     usergroup = models.CharField(choices=ACCOUNT_TYPE,max_length=20,null=True)
     birthdate = models.DateField(null=True, blank=True)
+    #photo = models.FileField("Photo",upload_to='profilephotos',blank=True)
     def __unicode__(self):
         return u'%s %s' %(self.user.first_name,self.user.last_name)
 
@@ -30,6 +31,9 @@ class Employment(models.Model):
     startdate = models.DateField(null=True,blank=True)
     enddata = models.DateField(null=True,blank=True)
     employer = models.TextField()
+    @models.permalink
+    def get_absolute_url(self):
+        return ('profile',(),{})
 class Category(models.Model):
     category = models.CharField("Category",max_length=25)
     def __unicode__(self):
@@ -56,7 +60,7 @@ class Article(models.Model):
     category = models.ForeignKey(Category)
     published = models.DateField(null=True,blank=True)
     month = models.CharField("Month",max_length=25)
-    title = models.CharField("Article Title",max_length=30)
+    title = models.CharField("Article Title",max_length=70)
     company = models.ManyToManyField(Company,blank=True)
     mediabrand = models.ForeignKey(MediaBrand)
     article_summary = models.TextField("Article Summary")
@@ -77,3 +81,7 @@ class Awards(models.Model):
     profile=models.ForeignKey(Profile)
     award = models.TextField()
     year = models.DateField(null=True,blank=True)
+    @models.permalink
+    def get_absolute_url(self):
+        return ('profile',(),{})
+

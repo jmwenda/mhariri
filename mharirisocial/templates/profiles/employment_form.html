@@ -1,0 +1,13 @@
+{% extends "site_base.html" %}
+{% block body %}
+
+Add Employment
+<form class=".form-vertical" action="" method="post"  enctype="multipart/form-data">{% csrf_token %} 
+<input type="hidden" name="profile" id="id_profile" value={{ request.user.profile.pk}}>
+<tr><th><label for="id_startdate">Startdate:</label></th><td>{{ form.startdate}}</td></tr>
+<tr><th><label for="id_enddata">Enddata:</label></th><td>{{ form.enddata}} </td></tr>
+<tr><th><label for="id_employer">Employer:</label></th><td>{{ form.employer}}</td></tr>
+<input type="submit" value="Submit" />
+</form>
+
+{% endblock %}
