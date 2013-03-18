@@ -139,7 +139,7 @@ INSTALLED_APPS = [
     "account",
     "metron",
     "django_filters",
-    #"gcharts",
+    "gcharts",
     
     # project
     "mharirisocial.profiles",
