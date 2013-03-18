@@ -4,13 +4,14 @@ from django.conf.urls.static import static
 from django.http import HttpResponseRedirect
 
 from django.views.generic.simple import direct_to_template
-from django.views.generic import ListView,CreateView,DetailView
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import ListView,CreateView,DetailView,UpdateView
 from django_filters.views import object_filter
 from django.contrib import admin
 admin.autodiscover()
 
 from .views import SignupView
-from mharirisocial.profiles.models import Article,Employment,Awards
+from mharirisocial.profiles.models import Article,Employment,Awards,Profile
 from mharirisocial.forms import SearchForm
 from .views import ArticleFilter
 def is_admin(function):
@@ -35,8 +36,10 @@ urlpatterns = patterns("",
     #url(r"^content/$",is_admin(object_filter),{'model': Article},name="content")
     url(r"^content/$",is_admin(object_filter),{'filter_class':ArticleFilter },name="content"),
     url(r"^profile/$",'mharirisocial.views.profile',name="profile"),
+    url(r"^profile/analysis/(?P<username>\w+)/",'mharirisocial.views.analytics',name="analysis"),
     url(r"^profile/(?P<username>\w+)/education/new/",CreateView.as_view(model=Employment),name="education-form"),
-    url(r"^profile/(?P<username>\w+)/award/new/",CreateView.as_view(model=Awards),name="award-form")
+    url(r"^profile/(?P<username>\w+)/award/new/",CreateView.as_view(model=Awards),name="award-form"),
+    url(r"^profile/edit/(?P<pk>\w+)/",UpdateView.as_view(model=Profile,success_url=reverse_lazy('profile')),name="profile-form")
     #url(r"^profile/(?P<username>\w+)/add-education/$",'mharirisocial.views.add_education',name="add-education")
 )
 

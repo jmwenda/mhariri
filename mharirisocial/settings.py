@@ -118,6 +118,9 @@ TEMPLATE_DIRS = [
     os.path.join(PACKAGE_ROOT, "templates"),
 ]
 
+GOOGLECHARTS_API = "1.1"
+GOOGLECHARTS_PACKAGES = ["corechart"]
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -136,6 +139,7 @@ INSTALLED_APPS = [
     "account",
     "metron",
     "django_filters",
+    "gcharts",
     
     # project
     "mharirisocial.profiles",
@@ -187,5 +191,5 @@ ACCOUNT_LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
 AUTH_PROFILE_MODULE = 'profiles.Profile'
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()

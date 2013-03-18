@@ -1,9 +1,10 @@
 import account.views
 from django.shortcuts import render_to_response
 import django_filters
-from mharirisocial.profiles.models import Article,Employment,Awards,Profile
+from mharirisocial.profiles.models import Article,Employment,Awards,Profile,Company,Sector
 from .forms import SignupForm
 from django.contrib.auth.models import User
+from django.db.models import Count
 from django.template import Context,RequestContext
 
 
@@ -52,11 +53,30 @@ def profile(request):
     articles = Article.objects.filter(profile=profile)[:10]
     employment = Employment.objects.filter(profile=profile)
     awards = Awards.objects.filter(profile=profile)
-    #import pdb;pdb.set_trace()
-    return render_to_response('profiles/view.html',{"articles": articles,"employment":employment,"awards":awards},RequestContext(request))
+    article_comp = Company.objects.filter(article__profile=profile).annotate(num_comp = Count('article'))
+    sector_comp = Sector.objects.filter(article__profile=profile).annotate(num_sector = Count('article'))
+    #import pdb;pdb.set_trace() 
+    return render_to_response('profiles/view.html',{"articles": articles,"employment":employment,"awards":awards,"mentions":article_comp,"sectors":sector_comp},RequestContext(request))
+def analytics(request,username):
+    user = request.user
+    profile = user.profile
+    article_comp = Company.objects.filter(article__profile=profile).annotate(num_comp = Count('article'))
+    sector_comp = Sector.objects.filter(article__profile=profile).annotate(num_sector = Count('article'))
+    companychart = Company.gcharts.filter(article__profile=profile).values("company").annotate(num_comp = Count('article')).order_by()
+    companychartjson = companychart.to_json(labels={"num_comp": "Mentions"})
+    sectorchart = Sector.gcharts.filter(article__profile=profile).values("sector").annotate(num_sector = Count('article')).order_by()
+    sectorchartjson = sectorchart.to_json(labels={"num_sector": "Sectors"},order=("sector","num_sector"))
+    sentimentchart = Article.gcharts.filter(profile=profile).values("tonality").annotate(num_tone = Count('article')).order_by()
+    sentimentchartjson = sentimentchart.to_json(labels={"num_tone": "Tonality"},order=("tonality","num_tone"))
+    #import pdb;pdb.set_trace() 
+    return render_to_response('profiles/chartview.html',{"mentions":article_comp,"sectors":sector_comp,"spam_data":companychartjson,"sector_data":sectorchartjson,"tone_data":sentimentchartjson},RequestContext(request))
+
 def index(request,template):
     articles = Article.objects.all()[: 5]
     journos = Profile.objects.filter(usergroup='journalist')[:5]
+    user = request.user
+    profile = user.profile
+    myarticles = Article.objects.filter(company=profile.company)[:25]
     return render_to_response(template,{"articles": articles,"journos":journos},RequestContext(request))
 def add_education(request,username):
     user = User.objects.get(username=username)

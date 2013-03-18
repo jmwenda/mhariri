@@ -3,15 +3,23 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 from django.contrib.auth.models import User
+from gcharts import GChartsManager
 
+class Company(models.Model):
+    company = models.CharField("Company",max_length=25)
+    objects = models.Manager()
+    gcharts = GChartsManager()
+    def __unicode__(self):
+        return self.company
 
 class Profile(models.Model):
     
     user = models.OneToOneField(User, related_name="profile")
-    ACCOUNT_TYPE = ((u'journalist', u'journalist'),(u'Content Provider', u'Content Provider'))
+    ACCOUNT_TYPE = ((u'journalist', u'journalist'),(u'Content Provider', u'Content Provider'),(u'Client',u'Client'))
     usergroup = models.CharField(choices=ACCOUNT_TYPE,max_length=20,null=True)
     birthdate = models.DateField(null=True, blank=True)
-    #photo = models.FileField("Photo",upload_to='profilephotos',blank=True)
+    photo = models.FileField("Photo",upload_to='profilephotos',blank=True)
+    company = models.ForeignKey(Company)
     def __unicode__(self):
         return u'%s %s' %(self.user.first_name,self.user.last_name)
 
@@ -36,10 +44,14 @@ class Employment(models.Model):
         return ('profile',(),{})
 class Category(models.Model):
     category = models.CharField("Category",max_length=25)
+    objects = models.Manager()
+    gcharts = GChartsManager()
     def __unicode__(self):
         return self.category
 class Sector(models.Model):
     sector = models.CharField("Sector",max_length=25)
+    objects = models.Manager()
+    gcharts = GChartsManager()
     def __unicode__(self):
         return self.sector
 class MediaHouse(models.Model):
@@ -51,10 +63,6 @@ class MediaBrand(models.Model):
     mediahouse = models.ForeignKey(MediaHouse)
     def __unicode__(self):
         return u'%s - %s' % (self.mediahouse, self.brand)
-class Company(models.Model):
-    company = models.CharField("Company",max_length=25)
-    def __unicode__(self):
-        return self.company
 class Article(models.Model):
     profile = models.ForeignKey(Profile)
     category = models.ForeignKey(Category)
@@ -72,7 +80,9 @@ class Article(models.Model):
     TONALITY_TYPE = ((u'POSITIVE', u'POSITIVE'),(u'NEGATIVE', u'NEGATIVE'))
     tonality = models.CharField(choices=TONALITY_TYPE,max_length=20,null=False)
     sector = models.ForeignKey(Sector)
-    relevance = models.CharField("Relevance",max_length=25,blank=True) 
+    relevance = models.CharField("Relevance",max_length=25,blank=True)
+    objects = models.Manager()
+    gcharts = GChartsManager() 
     @models.permalink
     def get_absolute_url(self):
         return ('content',(),{})

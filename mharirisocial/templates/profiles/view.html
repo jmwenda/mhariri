@@ -7,9 +7,13 @@
 	    <div class="span4">
 	    <p>Name: {{request.user.first_name }} {{ request.user.last_name}}</p>
 	    <p>Date of Birth: {{request.user.profile.birthdate }}</p>
+             {% if request.user.profile.photo %}
+            <img src="{{MEDIA_URL}}/{{request.user.profile.photo}}" width="100px" height="100px">
+             {% else %}
 	    <img src="http://www.googlelunarxprize.org/sites/googlelunarxprize.org/files/styles/profile_picture/public/default-profile.jpg" width="100px" height="100px">
-	    <h3>Education</h3>
-	    <h4><a href="{{request.user}}/education/new/">Add Education</a></h4>
+{% endif %}	 <p> <a href="edit/{{request.user.id}}">Edit</a></p>
+            <h3>Employment</h3>
+	    <h4><a href="{{request.user}}/education/new/">Add Employment</a></h4>
 	     {% for job in employment %}
 		    <ul>{{ job.employer }}</ul>
 		  {{ job.startdate}} - {{ job.enddata}} 
@@ -20,12 +24,17 @@
 		    <ul>{{ award.award }} - {{ award.year.year}}</ul>
 		{% endfor %}
 	    <h3>Company Mentions</h3>
-	    {% for article in articles %}
-	       {% for company in article.company.all %}
-                   <ul>{{ company.company }} - {{article.company.count}}</ul>
+	    {% for mention in mentions %}
+                   <ul>{{ mention.company }} - {{mention.num_comp}}</ul>
          
-       {% endfor %}
-    {% endfor %} 
+            {% endfor %} 
+            <h3>Sector Reports</h3>
+            {% for sector in sectors %}
+                   <ul>{{ sector.sector }} - {{sector.num_sector}}</ul>
+
+            {% endfor %}           
+
+ 
     </div>
     <div class="span8">
     <h2>Written Articles</h2>
