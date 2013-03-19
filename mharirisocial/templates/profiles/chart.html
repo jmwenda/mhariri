@@ -1,0 +1,25 @@
+{% load gcharts %}
+
+    {% gcharts %}
+            <!-- Global options for all charts -->
+            options = {
+                    width: 500,
+                    height: 300
+            };
+
+            <!-- cloned option and adapted for "spam_opt" -->
+            spam_opt = _clone(options);
+            spam_opt.title = "Units of Spam sold last 3 month";
+
+            {% options spam_opt %}
+                    kind: "ColumnChart",
+                    options: spam_opt,
+            {% endoptions %}
+
+            {% render "spam_chart" "spam_data" "spam_opt" %}
+
+    {% endgcharts %}
+
+    <div id="spam_chart">
+        <!-- container for spam_data chart -->
+    </div>

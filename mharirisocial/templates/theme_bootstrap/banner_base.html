@@ -14,17 +14,17 @@
     <div class="row">
         <div class="span6">
         {% block column-1 %}
-            <h2>Latest Journalists</h2>
+            <h2>Top Journalists</h2>
         {% for journo in journos %}
-            <li>{{ journo.user.first_name }} {{ journo.user.last_name}}</li>
+            <p>{{ journo.user.first_name }} {{ journo.user.last_name}} with {{ journo.num_article }} articles</p>
         {% endfor %}
         {% endblock %}
         </div>
         <div class="span6">
         {% block column-2 %}
-            <h2>Latest Articles</h2>
-           {% for article in articles %}
-            <li>{{ article.title }}</li>
+            <h2>Articles per Mediabrands</h2>
+           {% for brand in mediabrands %}
+            <p>{{ brand.brand }} ({{ brand.num_profile}})</p>
         {% endfor %}
         {% endblock %}
         </div>

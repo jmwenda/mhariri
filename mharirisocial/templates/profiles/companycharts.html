@@ -1,0 +1,104 @@
+{% extends "site_base.html" %}
+
+{% block body %}
+{% load gcharts %}
+
+    {% gcharts %}
+            <!-- Global options for all charts -->
+            options = {
+                    width: 300,
+                    height: 300
+            };
+            
+            optionstwo = {
+                    width: 500,
+                    height: 300
+            };
+
+            <!-- cloned option and adapted for "spam_opt" -->
+            spam_opt = _clone(optionstwo);
+            spam_opt.title = "Number of Mentions by Brands";
+
+            {% options spam_opt %}
+                    kind: "ColumnChart",
+                    options: spam_opt,
+            {% endoptions %}
+
+            {% render "spam_chart" "spam_data" "spam_opt" %}
+
+            <!-- cloned option and adapted for "spam_opt" -->
+            sector_opt = _clone(options);
+            sector_opt.title = "Mentions by Sector";
+
+            {% options sector_opt %}
+                    kind: "ColumnChart",
+                    options: sector_opt,
+            {% endoptions %}
+
+            {% render "sector_chart" "sector_data" "sector_opt" %}
+
+
+            <!-- cloned option and adapted for "spam_opt" -->
+            tone_opt = _clone(options);
+            tone_opt.title = "Overall Tonality";
+
+            {% options tone_opt %}
+                    kind: "PieChart",
+                    options: tone_opt,
+            {% endoptions %}
+
+            {% render "tone_chart" "tone_data" "tone_opt" %}
+
+
+
+            article_opt = _clone(optionstwo);
+            article_opt.title = "Monthly Article Count";
+
+            {% options article_opt %}
+                    kind: "ColumnChart",
+                    options: article_opt,
+            {% endoptions %}
+
+            {% render "article_chart" "company_data" "article_opt" %}
+
+    {% endgcharts %}
+	<div>
+	    <div class="row">
+	    <div class="span4">
+
+   <div id="sector_chart">
+        <!-- container for sector_data chart -->
+    </div>
+   <div id="tone_chart">
+        <!-- container for sector_data chart -->
+    </div>
+
+
+ 
+    </div>
+    <div class="span8">
+    <h2>Charts</h2>
+    <div>
+   <div id="spam_chart">
+        <!-- container for spam_data chart -->
+    </div> 
+     
+   <div id="sector_chart">
+        <!-- container for sector_data chart -->
+    </div>
+   <div id="tone_chart">
+        <!-- container for sector_data chart -->
+    </div>
+
+   <div id="article_chart">
+        <!-- container for sector_data chart -->
+    </div>
+
+
+
+</div>
+    </div>
+    </div>
+</div>
+</body>
+{% endblock %}

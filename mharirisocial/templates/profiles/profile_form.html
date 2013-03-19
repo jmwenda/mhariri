@@ -1,0 +1,13 @@
+{% extends "site_base.html" %}
+{% block body %}
+
+Edit Profile
+<form class=".form-horizontal" action="{% url profile-form pk=request.user.profile.id %}" method="post"  enctype="multipart/form-data">{% csrf_token %} 
+<p><label for="id_birthdate">Birth date:</label> <input type="text" name="birthdate" value="1983-07-13" id="id_birthdate" /></p>
+<p><label for="id_photo">Photo:</label> <input type="file" name="photo" id="id_photo" /></p>
+<input type="hidden" name="user" id="id_user" value={{ request.user.id}}>
+<input type="hidden" name="usergroup" id="id_usergroup" value="journalist">
+<input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

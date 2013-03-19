@@ -1,0 +1,107 @@
+{% extends "site_base.html" %}
+
+	{% block body %}
+ {% load gcharts %}
+
+    {% gcharts %}
+            <!-- Global options for all charts -->
+            options = {
+                    width: 300,
+                    height: 300
+            };
+
+            <!-- cloned option and adapted for "spam_opt" -->
+            spam_opt = _clone(options);
+            spam_opt.title = "Number of Company Mentions";
+
+            {% options spam_opt %}
+                    kind: "ColumnChart",
+                    options: spam_opt,
+            {% endoptions %}
+
+            {% render "spam_chart" "spam_data" "spam_opt" %}
+
+            <!-- cloned option and adapted for "spam_opt" -->
+            sector_opt = _clone(options);
+            sector_opt.title = "Sector Statistics";
+
+            {% options sector_opt %}
+                    kind: "ColumnChart",
+                    options: sector_opt,
+            {% endoptions %}
+
+            {% render "sector_chart" "sector_data" "sector_opt" %}
+
+
+            <!-- cloned option and adapted for "spam_opt" -->
+            tone_opt = _clone(options);
+            tone_opt.title = "Tonality";
+
+            {% options tone_opt %}
+                    kind: "PieChart",
+                    options: tone_opt,
+            {% endoptions %}
+
+{% render "tone_chart" "tone_data" "tone_opt" %}
+
+    {% endgcharts %}
+
+	<div>
+	    <h2>Profile</h2>
+	    <div class="row">
+	    <div class="span4">
+	    <p>Name: {{user.first_name }} {{ user.last_name}}</p>
+	    <p>Date of Birth: {{request.user.profile.birthdate }}</p>
+            <p>Email: {{user.email }}</p>
+            <p>Phone Number: {{user.profile.mobile }}</p>
+            <p>Twitter Handle: {{user.profile.twitter }}</p>
+             {% if user.profile.photo %}
+            <img src="{{MEDIA_URL}}/{{user.profile.photo}}" width="100px" height="100px">
+             {% else %}
+	    <img src="http://www.googlelunarxprize.org/sites/googlelunarxprize.org/files/styles/profile_picture/public/default-profile.jpg" width="100px" height="100px">
+{% endif %}
+            <h3>Employment</h3>
+	     {% for job in employment %}
+		    <ul>{{ job.employer }}</ul>
+		  {{ job.startdate}} - {{ job.enddata}} 
+		{% endfor %} 
+	    <h3>Awards</h3>
+	     {% for award in awards %}
+		    <ul>{{ award.award }} - {{ award.year.year}}</ul>
+		{% endfor %}
+	    <h3>Company Mentions</h3>
+	    {% for mention in mentions %}
+                   <ul>{{ mention.company }} - {{mention.num_comp}}</ul>
+         
+            {% endfor %} 
+            <h3>Sector Reports</h3>
+            {% for sector in sectors %}
+                   <ul>{{ sector.sector }} - {{sector.num_sector}}</ul>
+
+            {% endfor %}           
+   <div id="spam_chart">
+        <!-- container for spam_data chart -->
+    </div>
+
+   <div id="sector_chart">
+        <!-- container for sector_data chart -->
+    </div>
+   <div id="tone_chart">
+        <!-- container for sector_data chart -->
+    </div>
+ 
+    </div>
+    <div class="span8">
+    <h2>Written Articles</h2>
+    <div>
+     {% for article in articles %}
+            <h4>{{ article.title }}</h4>
+            {{ article.published}}
+            <p> {{ article.article_summary}} <a href="">More</a></p>
+        {% endfor %} 
+    </div>
+    </div>
+    </div>
+</div>
+</body>
+{% endblock %}
