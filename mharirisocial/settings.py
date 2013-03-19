@@ -13,13 +13,18 @@ ADMINS = [
 
 MANAGERS = ADMINS
 
+
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "dev.db",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mhariri',                      
+        'USER': 'mhariri',
+        'PASSWORD': 'mhariri',
+        'HOST': 'localhost',
+        'PORT': 5432
     }
 }
-
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -140,10 +145,17 @@ INSTALLED_APPS = [
     "metron",
     "django_filters",
     "gcharts",
+    "haystack",
     
     # project
     "mharirisocial.profiles",
 ]
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+    },
+}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

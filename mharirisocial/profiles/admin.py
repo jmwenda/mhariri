@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mharirisocial.profiles.models import Profile,Employment,Awards,Article,Category,Company,MediaBrand,MediaHouse,Sector
+from mharirisocial.profiles.models import Profile,Employment,Education,Awards,Article,Category,Company,MediaBrand,MediaHouse,Sector
 
 admin.site.register(Profile)
 admin.site.register(Category)
@@ -10,3 +10,4 @@ admin.site.register(Company)
 admin.site.register(MediaBrand)
 admin.site.register(Sector)
 admin.site.register(MediaHouse)
+admin.site.register(Education)

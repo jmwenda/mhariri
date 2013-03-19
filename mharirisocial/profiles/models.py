@@ -19,7 +19,11 @@ class Profile(models.Model):
     usergroup = models.CharField(choices=ACCOUNT_TYPE,max_length=20,null=True)
     birthdate = models.DateField(null=True, blank=True)
     photo = models.FileField("Photo",upload_to='profilephotos',blank=True)
-    company = models.ForeignKey(Company)
+    twitter = models.CharField("Twitter",null=True,blank=True,max_length=20)
+    mobile = models.CharField("Mobile",null=True,blank=True,max_length=20)
+    company = models.ForeignKey(Company,null=True,blank=True)
+    objects = models.Manager()
+    gcharts = GChartsManager()
     def __unicode__(self):
         return u'%s %s' %(self.user.first_name,self.user.last_name)
 
@@ -42,6 +46,17 @@ class Employment(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('profile',(),{})
+class Education(models.Model):
+    profile = models.ForeignKey(Profile)
+    startdate = models.DateField(null=True,blank=True)
+    enddata = models.DateField(null=True,blank=True)
+    institution = models.CharField("Institution",max_length=50)
+    EDU_TYPE = ((u'Degree', u'Degree'),(u'Certificate', u'Certificate'))
+    edutype = models.CharField("Education",choices=EDU_TYPE,max_length=50)
+    @models.permalink
+    def get_absolute_url(self):
+        return ('profile',(),{})
+
 class Category(models.Model):
     category = models.CharField("Category",max_length=25)
     objects = models.Manager()
@@ -61,6 +76,9 @@ class MediaHouse(models.Model):
 class MediaBrand(models.Model):
     brand = models.CharField("Brand",max_length=50)
     mediahouse = models.ForeignKey(MediaHouse)
+    objects = models.Manager()
+    gcharts = GChartsManager()
+
     def __unicode__(self):
         return u'%s - %s' % (self.mediahouse, self.brand)
 class Article(models.Model):
@@ -77,7 +95,7 @@ class Article(models.Model):
     article_pdf = models.FileField("Article PDF",upload_to='resources',blank=True)
     article_page = models.CharField("Article Page",max_length=25,blank=True)
     article_size = models.CharField("Article Size",max_length=25,blank=True)
-    TONALITY_TYPE = ((u'POSITIVE', u'POSITIVE'),(u'NEGATIVE', u'NEGATIVE'))
+    TONALITY_TYPE = ((u'POSITIVE', u'positively'),(u'NEGATIVE', u'negatively'))
     tonality = models.CharField(choices=TONALITY_TYPE,max_length=20,null=False)
     sector = models.ForeignKey(Sector)
     relevance = models.CharField("Relevance",max_length=25,blank=True)
