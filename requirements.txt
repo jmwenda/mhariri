@@ -12,4 +12,5 @@ psycopg2==2.4.6
 pytz==2012d
 wsgiref==0.1.2
 django-gcharts==1.2
+-e git+https://github.com/toastdriven/django-haystack.git@46b8117431681991c63a1b90fbe7f70115dd4055#egg=django_haystack-dev
 -e git+https://github.com/afrigeo/google-visualization-python.git#egg=google-visualization-python
