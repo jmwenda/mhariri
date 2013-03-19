@@ -12,4 +12,4 @@ psycopg2==2.4.6
 pytz==2012d
 wsgiref==0.1.2
 django-gcharts==1.2
-
+-e svn+http://google-visualization-python.googlecode.com/svn/trunk#egg=google-visualization-python
