@@ -8,9 +8,11 @@
 
 {% block banner %}
     <p>
-        {% blocktrans %}
-        <b>Mhariri Stream</b>
-        {% endblocktrans %}
+        <b>Latest Sector Articles</b>
+        {% for sector in mysector %}
+           <p> {{sector.sector}} ({{sector.sector_count}})
+ {% endfor %}
+
     </p>
     
 {% endblock %}

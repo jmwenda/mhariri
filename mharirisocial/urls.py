@@ -11,13 +11,13 @@ from django.contrib import admin
 admin.autodiscover()
 
 from .views import SignupView
-from mharirisocial.profiles.models import Article,Employment,Awards,Profile
+from mharirisocial.profiles.models import Article,Employment,Awards,Profile,Education
 from mharirisocial.forms import SearchForm
 from .views import ArticleFilter
 def is_admin(function):
     def wrapper(request, *args, **kw):
         user=request.user
-        if  user.get_profile().usergroup == 'Content Provider':
+        if  user.get_profile().usergroup == 'Content Provider' or user.get_profile().usergroup == 'Client':
             return function(request,*args,**kw)
         else:
             return HttpResponseRedirect('/')
@@ -36,9 +36,15 @@ urlpatterns = patterns("",
     #url(r"^content/$",is_admin(object_filter),{'model': Article},name="content")
     url(r"^content/$",is_admin(object_filter),{'filter_class':ArticleFilter },name="content"),
     url(r"^profile/$",'mharirisocial.views.profile',name="profile"),
+    #url(r"^search/$",is_admin(object_filter),{'filter_class':ArticleFilter },name="aggregate"),
+    url(r"^search/$",'mharirisocial.views.search',name="aggregate"),
+    #url(r'^search/', include('haystack.urls')),
+    url(r"^analytics/$",'mharirisocial.views.analysis',name="analytics"),
     url(r"^profile/analysis/(?P<username>\w+)/",'mharirisocial.views.analytics',name="analysis"),
-    url(r"^profile/(?P<username>\w+)/education/new/",CreateView.as_view(model=Employment),name="education-form"),
+    url(r"^profile/(?P<username>\w+)/education/new/",CreateView.as_view(model=Education),name="education-form"),
+    url(r"^profile/(?P<username>\w+)/employment/new/",CreateView.as_view(model=Employment),name="employment-form"),
     url(r"^profile/(?P<username>\w+)/award/new/",CreateView.as_view(model=Awards),name="award-form"),
+    url(r"^profile/(?P<username>\w+)/$",'mharirisocial.views.viewprofile',name="viewprofile"),
     url(r"^profile/edit/(?P<pk>\w+)/",UpdateView.as_view(model=Profile,success_url=reverse_lazy('profile')),name="profile-form")
     #url(r"^profile/(?P<username>\w+)/add-education/$",'mharirisocial.views.add_education',name="add-education")
 )
