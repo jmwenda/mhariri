@@ -94,11 +94,34 @@ def index(request,template):
 def add_education(request,username):
     user = User.objects.get(username=username)
     return render_to_response('profiles/add_education.html')
+def employmentdetail(request,username):
+    user = User.objects.get(username=username)
+    profile = user.profile
+    employment = Employment.objects.filter(profile=profile)
+    education = Education.objects.filter(profile=profile)
+    awards = Awards.objects.filter(profile=profile)
+    article_comp = Company.objects.filter(article__profile=profile).annotate(num_comp = Count('article'))
+    sector_comp = Sector.objects.filter(article__profile=profile).annotate(num_sector = Count('article'))
+    return render_to_response('profiles/employmentview.html',{"employment":employment,"education":education,"awards":awards,"mentions":article_comp,"sectors":sector_comp},RequestContext(request))
+
+def educationdetail(request,username):
+    user = User.objects.get(username=username)
+    profile = user.profile
+    employment = Employment.objects.filter(profile=profile)
+    education = Education.objects.filter(profile=profile)
+    awards = Awards.objects.filter(profile=profile)
+    article_comp = Company.objects.filter(article__profile=profile).annotate(num_comp = Count('article'))
+    sector_comp = Sector.objects.filter(article__profile=profile).annotate(num_sector = Count('article'))
+    return render_to_response('profiles/educationview.html',{"employment":employment,"education":education,"awards":awards,"mentions":article_comp,"sectors":sector_comp},RequestContext(request))
+
+
+
 def viewprofile(request,username):
     user = User.objects.get(username=username)
     profile = user.profile
     articles = Article.objects.filter(profile=profile)[:10]
-    employment = Employment.objects.filter(profile=profile)
+    employment = Employment.objects.filter(profile=profile)[:3]
+    education = Education.objects.filter(profile=profile)[:3]
     awards = Awards.objects.filter(profile=profile)
     article_comp = Company.objects.filter(article__profile=profile).annotate(num_comp = Count('article'))
     sector_comp = Sector.objects.filter(article__profile=profile).annotate(num_sector = Count('article'))
@@ -108,7 +131,7 @@ def viewprofile(request,username):
     sectorchartjson = sectorchart.to_json(labels={"num_sector": "Sectors"},order=("sector","num_sector"))
     sentimentchart = Article.gcharts.filter(profile=profile).values("tonality").annotate(num_tone = Count('article')).order_by()
     sentimentchartjson = sentimentchart.to_json(labels={"num_tone": "Tonality"},order=("tonality","num_tone"))
-    return render_to_response('profiles/plainview.html',{"user":user,"articles": articles,"employment":employment,"awards":awards,"mentions":article_comp,"sectors":sector_comp,"spam_data":companychartjson,"sector_data":sectorchartjson,"tone_data":sentimentchartjson},RequestContext(request))
+    return render_to_response('profiles/plainview.html',{"user":user,"articles": articles,"employment":employment,"education":education,"awards":awards,"mentions":article_comp,"sectors":sector_comp,"spam_data":companychartjson,"sector_data":sectorchartjson,"tone_data":sentimentchartjson},RequestContext(request))
 def search(request):
     filter = ArticleFilter(request.GET, queryset=Article.objects.distinct('profile'))
     return render_to_response('profiles/article_filter.html', {'filter': filter})

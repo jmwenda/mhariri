@@ -12,11 +12,20 @@ class Company(models.Model):
     def __unicode__(self):
         return self.company
 
+class Mediatype(models.Model):
+  media = models.CharField(max_length=20)
+  def __unicode__(self):
+        return self.media
+
+
+
 class Profile(models.Model):
-    
     user = models.OneToOneField(User, related_name="profile")
     ACCOUNT_TYPE = ((u'journalist', u'journalist'),(u'Content Provider', u'Content Provider'),(u'Client',u'Client'))
     usergroup = models.CharField(choices=ACCOUNT_TYPE,max_length=20,null=True)
+    GENDER_TYPE = ((u'Male', u'Male'),(u'Female', u'Female'))
+    gender = models.CharField(choices=GENDER_TYPE,max_length=20,null=True)
+    media = models.ManyToManyField(Mediatype)
     birthdate = models.DateField(null=True, blank=True)
     photo = models.FileField("Photo",upload_to='profilephotos',blank=True)
     twitter = models.CharField("Twitter",null=True,blank=True,max_length=20)
@@ -26,6 +35,10 @@ class Profile(models.Model):
     gcharts = GChartsManager()
     def __unicode__(self):
         return u'%s %s' %(self.user.first_name,self.user.last_name)
+    @models.permalink
+    def get_absolute_url(self):
+        return ('profile',(),{})
+
 
 @receiver(post_save, sender=User)
 def user_post_save(sender, **kwargs):

@@ -3,11 +3,17 @@
 
 Edit Profile
 <form class=".form-horizontal" action="{% url profile-form pk=request.user.profile.id %}" method="post"  enctype="multipart/form-data">{% csrf_token %} 
-<p><label for="id_birthdate">Birth date:</label> <input type="text" name="birthdate" value="1983-07-13" id="id_birthdate" /></p>
-<p><label for="id_photo">Photo:</label> <input type="file" name="photo" id="id_photo" /></p>
-<input type="hidden" name="user" id="id_user" value={{ request.user.id}}>
+<p><label for="id_birthdate">Birth date:</label>{{form.birthdate}}</p>
+<p><label for="id_photo">Photo:</label> {{form.photo}}</p>
+<p><label for="id_gender">Gender:</label> {{form.gender}}</p>
+<p><label for="id_twitter">Twitter:</label> {{form.twitter}}</p>
+<p><label for="id_phone">Phone Number:</label> {{form.mobile}}</p>
+<p><label for="id_mediatype">Media type:</label> {{form.media}}</p>
+
 <input type="hidden" name="usergroup" id="id_usergroup" value="journalist">
+<input type="hidden" name="user" id="id_user" value="{{request.user.profile.user.id}}">
 <input type="submit" value="Submit" />
 </form>
+
 
 {% endblock %}

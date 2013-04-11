@@ -1,4 +1,6 @@
+{% extends "site_base.html" %}
 
+{% block body %}
 {% block content %}
     <h2>Search</h2>
 
@@ -14,11 +16,29 @@
         </table>
 
         {% if query %}
+       <!-- Begin faceting. -->
+    <h2>By Gender</h2>
+
+    <div>
+        <dl>
+            {% if facets.fields.gender %}
+                <dt>Gender</dt>
+                {# Provide only the top 5 authors #}
+                {% for author in facets.fields.gender|slice:":5" %}
+                    <dd><a href="{{ request.get_full_path }}&amp;selected_facets=author_exact:{{ author.0|urlencode }}">{{ author.0 }}</a> ({{ author.1 }})</dd>
+                {% endfor %}
+            {% else %}
+                <p>No gender facets.</p>
+            {% endif %}
+        </dl>
+    </div>
+    <!-- End faceting -->
             <h3>Results</h3>
 
             {% for result in page.object_list %}
                 <p>
-                    <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a>
+                    <a href="{% url viewprofile username=result.object.profile.user %}">{{ result.object.profile.user.first_name }}  {{result.object.profile.user.last_name}}</a>
+                    - {{result.object.profile.gender}}
                 </p>
             {% empty %}
                 <p>No results found.</p>
@@ -35,4 +55,5 @@
             {# Show some example queries to run, maybe query syntax, something else? #}
         {% endif %}
     </form>
+{% endblock %}
 {% endblock %}

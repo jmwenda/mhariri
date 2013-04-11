@@ -43,7 +43,6 @@
             {% endoptions %}
 
 {% render "tone_chart" "tone_data" "tone_opt" %}
-
     {% endgcharts %}
 
 	<div>
@@ -51,8 +50,9 @@
 	    <div class="row">
 	    <div class="span4">
 	    <p>Name: {{user.first_name }} {{ user.last_name}}</p>
-	    <p>Date of Birth: {{request.user.profile.birthdate }}</p>
+	    <p>Date of Birth: {{user.profile.birthdate }}</p>
             <p>Email: {{user.email }}</p>
+            <p>Gender: {{ user.profile.gender }}</p>
             <p>Phone Number: {{user.profile.mobile }}</p>
             <p>Twitter Handle: {{user.profile.twitter }}</p>
              {% if user.profile.photo %}
@@ -64,7 +64,17 @@
 	     {% for job in employment %}
 		    <ul>{{ job.employer }}</ul>
 		  {{ job.startdate}} - {{ job.enddata}} 
-		{% endfor %} 
+		{% endfor %}
+             <p></p>
+             <p><a href="employment/">More History</a></p>
+             <h3>Education</h3>
+             {% for job in education %}
+                    <ul>{{ job.institution }}</ul>
+                  {{ job.startdate}} - {{ job.enddata}}
+                {% endfor %}
+             <p></p>
+             <p><a href="education/">More History</a></p>
+ 
 	    <h3>Awards</h3>
 	     {% for award in awards %}
 		    <ul>{{ award.award }} - {{ award.year.year}}</ul>

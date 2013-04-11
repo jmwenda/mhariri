@@ -14,13 +14,25 @@ from .views import SignupView
 from mharirisocial.profiles.models import Article,Employment,Awards,Profile,Education
 from mharirisocial.forms import SearchForm
 from .views import ArticleFilter
+
+from haystack.forms import FacetedSearchForm
+from haystack.query import SearchQuerySet
+from haystack.views import FacetedSearchView
+
+sqs = SearchQuerySet().facet('sectors')
+
+
+
 def is_admin(function):
     def wrapper(request, *args, **kw):
         user=request.user
-        if  user.get_profile().usergroup == 'Content Provider' or user.get_profile().usergroup == 'Client':
-            return function(request,*args,**kw)
+        if user.is_authenticated():
+            if  user.get_profile().usergroup == 'Content Provider' or user.get_profile().usergroup == 'Client' or user.get_profile().usergroup == 'journalist':
+                return function(request,*args,**kw)
+            else:
+                return HttpResponseRedirect('/')
         else:
-            return HttpResponseRedirect('/')
+               return HttpResponseRedirect('/')
     return wrapper
 
 
@@ -37,16 +49,21 @@ urlpatterns = patterns("",
     url(r"^content/$",is_admin(object_filter),{'filter_class':ArticleFilter },name="content"),
     url(r"^profile/$",'mharirisocial.views.profile',name="profile"),
     #url(r"^search/$",is_admin(object_filter),{'filter_class':ArticleFilter },name="aggregate"),
-    url(r"^search/$",'mharirisocial.views.search',name="aggregate"),
+    #url(r"^search/$",'mharirisocial.views.search',name="aggregate"),
     #url(r'^search/', include('haystack.urls')),
-    url(r"^analytics/$",'mharirisocial.views.analysis',name="analytics"),
+    url(r"^analytics/$",is_admin('mharirisocial.views.analysis'),name="analytics"),
     url(r"^profile/analysis/(?P<username>\w+)/",'mharirisocial.views.analytics',name="analysis"),
     url(r"^profile/(?P<username>\w+)/education/new/",CreateView.as_view(model=Education),name="education-form"),
     url(r"^profile/(?P<username>\w+)/employment/new/",CreateView.as_view(model=Employment),name="employment-form"),
+    url(r"^profile/(?P<username>\w+)/education/",'mharirisocial.views.educationdetail',name="education-detail"),
+    url(r"^profile/(?P<username>\w+)/employment/",'mharirisocial.views.employmentdetail',name="employment-detail"),
     url(r"^profile/(?P<username>\w+)/award/new/",CreateView.as_view(model=Awards),name="award-form"),
     url(r"^profile/(?P<username>\w+)/$",'mharirisocial.views.viewprofile',name="viewprofile"),
     url(r"^profile/edit/(?P<pk>\w+)/",UpdateView.as_view(model=Profile,success_url=reverse_lazy('profile')),name="profile-form")
     #url(r"^profile/(?P<username>\w+)/add-education/$",'mharirisocial.views.add_education',name="add-education")
+)
+urlpatterns += patterns('haystack.views',
+    url(r'^search/', is_admin(FacetedSearchView(form_class=FacetedSearchForm, searchqueryset=sqs)), name='haystack_search'),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
