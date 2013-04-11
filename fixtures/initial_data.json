@@ -257,5 +257,19 @@
             "brand": "Business Daily"
         }, 
         "model": "profiles.mediabrand"
-    },{"model": "profiles.profile", "fields": {"twitter": null, "user": 1, "company": null, "usergroup": null, "birthdate": null, "mobile": null, "photo": ""}, "pk": 1}, {"model": "profiles.profile", "fields": {"twitter": "", "user": 2, "company": null, "usergroup": "Content Provider", "birthdate": "1976-06-11", "mobile": "", "photo": ""}, "pk": 2}, {"model": "profiles.profile", "fields": {"twitter": "@gkngigi", "user": 3, "company": null, "usergroup": "journalist", "birthdate": "1983-07-13", "mobile": "0721803167", "photo": "profilephotos/2011-10-2916.55.40.jpg"}, "pk": 3}, {"model": "profiles.profile", "fields": {"twitter": null, "user": 4, "company": null, "usergroup": "journalist", "birthdate": "1989-07-10", "mobile": null, "photo": ""}, "pk": 4}, {"model": "profiles.profile", "fields": {"twitter": null, "user": 5, "company": null, "usergroup": "journalist", "birthdate": "1975-01-12", "mobile": null, "photo": ""}, "pk": 5}, {"model": "profiles.profile", "fields": {"twitter": null, "user": 6, "company": null, "usergroup": "journalist", "birthdate": "1985-02-10", "mobile": null, "photo": ""}, "pk": 6}, {"model": "profiles.profile", "fields": {"twitter": null, "user": 7, "company": null, "usergroup": "journalist", "birthdate": "1986-02-10", "mobile": null, "photo": ""}, "pk": 7}, {"model": "profiles.profile", "fields": {"twitter": null, "user": 8, "company": null, "usergroup": "journalist", "birthdate": "1979-05-09", "mobile": null, "photo": ""}, "pk": 8}, {"model": "profiles.profile", "fields": {"twitter": null, "user": 9, "company": null, "usergroup": "journalist", "birthdate": "1982-04-12", "mobile": null, "photo": ""}, "pk": 9}
+    },{"model": "profiles.profile", "fields": {"twitter": null, "user": 1, "company": null, "usergroup": null, "birthdate": null, "mobile": null, "photo": ""}, "pk": 1}, {"model": "profiles.profile", "fields": {"twitter": "", "user": 2, "company": null, "usergroup": "Content Provider", "birthdate": "1976-06-11", "mobile": "", "photo": ""}, "pk": 2}, {"model": "profiles.profile", "fields": {           "media": [
+                1
+            ],"twitter": "@gkngigi", "user": 3, "company": null, "usergroup": "journalist", "birthdate": "1983-07-13", "mobile": "0721803167", "photo": "profilephotos/2011-10-2916.55.40.jpg"}, "pk": 3}, {"model": "profiles.profile", "fields": {"twitter": null, "user": 4, "company": null, "usergroup": "journalist", "birthdate": "1989-07-10", "mobile": null, "photo": "",           "media": [
+                1
+            ],}, "pk": 4}, {"model": "profiles.profile", "fields": {           "media": [
+                1
+            ],"twitter": null, "user": 5, "company": null, "usergroup": "journalist", "birthdate": "1975-01-12", "mobile": null, "photo": ""}, "pk": 5}, {"model": "profiles.profile", "fields": {           "media": [
+                1
+            ],"twitter": null, "user": 6, "company": null, "usergroup": "journalist", "birthdate": "1985-02-10", "mobile": null, "photo": ""}, "pk": 6}, {"model": "profiles.profile", "fields": {           "media": [
+                1
+            ],"twitter": null, "user": 7, "company": null, "usergroup": "journalist", "birthdate": "1986-02-10", "mobile": null, "photo": ""}, "pk": 7}, {"model": "profiles.profile", "fields": {           "media": [
+                1
+            ],"twitter": null, "user": 8, "company": null, "usergroup": "journalist", "birthdate": "1979-05-09", "mobile": null, "photo": ""}, "pk": 8}, {"model": "profiles.profile", "fields": {           "media": [
+                1
+            ],"twitter": null, "user": 9, "company": null, "usergroup": "journalist", "birthdate": "1982-04-12", "mobile": null, "photo": ""}, "pk": 9}
 ]
