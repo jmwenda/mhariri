@@ -1,1043 +1,168 @@
-[
-    {
-        "fields": {
-            "codename": "add_account",
-            "content_type": 8,
-            "name": "Can add account"
-        },
-        "pk": 22,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_account",
-            "content_type": 8,
-            "name": "Can change account"
-        },
-        "pk": 23,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_account",
-            "content_type": 8,
-            "name": "Can delete account"
-        },
-        "pk": 24,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_accountdeletion",
-            "content_type": 13,
-            "name": "Can add account deletion"
-        },
-        "pk": 37,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_accountdeletion",
-            "content_type": 13,
-            "name": "Can change account deletion"
-        },
-        "pk": 38,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_accountdeletion",
-            "content_type": 13,
-            "name": "Can delete account deletion"
-        },
-        "pk": 39,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_emailaddress",
-            "content_type": 11,
-            "name": "Can add email address"
-        },
-        "pk": 31,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_emailaddress",
-            "content_type": 11,
-            "name": "Can change email address"
-        },
-        "pk": 32,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_emailaddress",
-            "content_type": 11,
-            "name": "Can delete email address"
-        },
-        "pk": 33,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_emailconfirmation",
-            "content_type": 12,
-            "name": "Can add email confirmation"
-        },
-        "pk": 34,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_emailconfirmation",
-            "content_type": 12,
-            "name": "Can change email confirmation"
-        },
-        "pk": 35,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_emailconfirmation",
-            "content_type": 12,
-            "name": "Can delete email confirmation"
-        },
-        "pk": 36,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_signupcode",
-            "content_type": 9,
-            "name": "Can add signup code"
-        },
-        "pk": 25,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_signupcode",
-            "content_type": 9,
-            "name": "Can change signup code"
-        },
-        "pk": 26,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_signupcode",
-            "content_type": 9,
-            "name": "Can delete signup code"
-        },
-        "pk": 27,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_signupcoderesult",
-            "content_type": 10,
-            "name": "Can add signup code result"
-        },
-        "pk": 28,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_signupcoderesult",
-            "content_type": 10,
-            "name": "Can change signup code result"
-        },
-        "pk": 29,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_signupcoderesult",
-            "content_type": 10,
-            "name": "Can delete signup code result"
-        },
-        "pk": 30,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_logentry",
-            "content_type": 1,
-            "name": "Can add log entry"
-        },
-        "pk": 1,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_logentry",
-            "content_type": 1,
-            "name": "Can change log entry"
-        },
-        "pk": 2,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_logentry",
-            "content_type": 1,
-            "name": "Can delete log entry"
-        },
-        "pk": 3,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_group",
-            "content_type": 3,
-            "name": "Can add group"
-        },
-        "pk": 7,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_group",
-            "content_type": 3,
-            "name": "Can change group"
-        },
-        "pk": 8,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_group",
-            "content_type": 3,
-            "name": "Can delete group"
-        },
-        "pk": 9,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_permission",
-            "content_type": 2,
-            "name": "Can add permission"
-        },
-        "pk": 4,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_permission",
-            "content_type": 2,
-            "name": "Can change permission"
-        },
-        "pk": 5,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_permission",
-            "content_type": 2,
-            "name": "Can delete permission"
-        },
-        "pk": 6,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_user",
-            "content_type": 4,
-            "name": "Can add user"
-        },
-        "pk": 10,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_user",
-            "content_type": 4,
-            "name": "Can change user"
-        },
-        "pk": 11,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_user",
-            "content_type": 4,
-            "name": "Can delete user"
-        },
-        "pk": 12,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_contenttype",
-            "content_type": 5,
-            "name": "Can add content type"
-        },
-        "pk": 13,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_contenttype",
-            "content_type": 5,
-            "name": "Can change content type"
-        },
-        "pk": 14,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_contenttype",
-            "content_type": 5,
-            "name": "Can delete content type"
-        },
-        "pk": 15,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_article",
-            "content_type": 22,
-            "name": "Can add article"
-        },
-        "pk": 64,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_article",
-            "content_type": 22,
-            "name": "Can change article"
-        },
-        "pk": 65,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_article",
-            "content_type": 22,
-            "name": "Can delete article"
-        },
-        "pk": 66,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_awards",
-            "content_type": 23,
-            "name": "Can add awards"
-        },
-        "pk": 67,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_awards",
-            "content_type": 23,
-            "name": "Can change awards"
-        },
-        "pk": 68,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_awards",
-            "content_type": 23,
-            "name": "Can delete awards"
-        },
-        "pk": 69,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_category",
-            "content_type": 18,
-            "name": "Can add category"
-        },
-        "pk": 52,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_category",
-            "content_type": 18,
-            "name": "Can change category"
-        },
-        "pk": 53,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_category",
-            "content_type": 18,
-            "name": "Can delete category"
-        },
-        "pk": 54,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_company",
-            "content_type": 14,
-            "name": "Can add company"
-        },
-        "pk": 40,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_company",
-            "content_type": 14,
-            "name": "Can change company"
-        },
-        "pk": 41,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_company",
-            "content_type": 14,
-            "name": "Can delete company"
-        },
-        "pk": 42,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_education",
-            "content_type": 17,
-            "name": "Can add education"
-        },
-        "pk": 49,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_education",
-            "content_type": 17,
-            "name": "Can change education"
-        },
-        "pk": 50,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_education",
-            "content_type": 17,
-            "name": "Can delete education"
-        },
-        "pk": 51,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_employment",
-            "content_type": 16,
-            "name": "Can add employment"
-        },
-        "pk": 46,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_employment",
-            "content_type": 16,
-            "name": "Can change employment"
-        },
-        "pk": 47,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_employment",
-            "content_type": 16,
-            "name": "Can delete employment"
-        },
-        "pk": 48,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_mediabrand",
-            "content_type": 21,
-            "name": "Can add media brand"
-        },
-        "pk": 61,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_mediabrand",
-            "content_type": 21,
-            "name": "Can change media brand"
-        },
-        "pk": 62,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_mediabrand",
-            "content_type": 21,
-            "name": "Can delete media brand"
-        },
-        "pk": 63,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_mediahouse",
-            "content_type": 20,
-            "name": "Can add media house"
-        },
-        "pk": 58,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_mediahouse",
-            "content_type": 20,
-            "name": "Can change media house"
-        },
-        "pk": 59,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_mediahouse",
-            "content_type": 20,
-            "name": "Can delete media house"
-        },
-        "pk": 60,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_profile",
-            "content_type": 15,
-            "name": "Can add profile"
-        },
-        "pk": 43,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_profile",
-            "content_type": 15,
-            "name": "Can change profile"
-        },
-        "pk": 44,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_profile",
-            "content_type": 15,
-            "name": "Can delete profile"
-        },
-        "pk": 45,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_sector",
-            "content_type": 19,
-            "name": "Can add sector"
-        },
-        "pk": 55,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_sector",
-            "content_type": 19,
-            "name": "Can change sector"
-        },
-        "pk": 56,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_sector",
-            "content_type": 19,
-            "name": "Can delete sector"
-        },
-        "pk": 57,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_session",
-            "content_type": 6,
-            "name": "Can add session"
-        },
-        "pk": 16,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_session",
-            "content_type": 6,
-            "name": "Can change session"
-        },
-        "pk": 17,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_session",
-            "content_type": 6,
-            "name": "Can delete session"
-        },
-        "pk": 18,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "add_site",
-            "content_type": 7,
-            "name": "Can add site"
-        },
-        "pk": 19,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "change_site",
-            "content_type": 7,
-            "name": "Can change site"
-        },
-        "pk": 20,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "codename": "delete_site",
-            "content_type": 7,
-            "name": "Can delete site"
-        },
-        "pk": 21,
-        "model": "auth.permission"
-    },
-    {
-        "fields": {
-            "is_staff": false,
-            "last_login": "2013-03-20T01:49:18.012Z",
-            "is_active": true,
-            "password": "pbkdf2_sha256$10000$sLlf49HYhyuX$WkQzGjdzqCGcbOVpLzQbiKm8KSKWW1YFj/hiZ1YfW24=",
-            "last_name": "Ngigi",
-            "first_name": "George",
-            "user_permissions": [],
-            "username": "gngigi",
-            "date_joined": "2013-03-20T01:49:17.387Z",
-            "groups": [],
-            "is_superuser": false,
-            "email": "gngigi@ke.nationmedia.com"
-        },
-        "pk": 3,
-        "model": "auth.user"
-    },
-    {
-        "fields": {
-            "is_staff": false,
-            "last_login": "2013-03-27T12:11:19.739Z",
-            "is_active": true,
-            "password": "pbkdf2_sha256$10000$50LDOEWJeWpU$Ok2/N/L6N6ZoLqGwKlAYc/re8uEsRBuqcqeav74Y8PY=",
-            "last_name": "Njiru",
-            "first_name": "John",
-            "user_permissions": [],
-            "username": "jnjiru",
-            "date_joined": "2013-03-27T12:11:19.267Z",
-            "groups": [],
-            "is_superuser": false,
-            "email": "jnjiru@ke.nationmedia.com"
-        },
-        "pk": 4,
-        "model": "auth.user"
-    },
-    {
-        "fields": {
-            "is_staff": false,
-            "last_login": "2013-04-02T06:35:33.717Z",
-            "is_active": true,
-            "password": "pbkdf2_sha256$10000$r79ZSlyIcd0e$A8V70X1VGQhz3XG50gV3PGoPKjtUGl9bVvlxgNNSskM=",
-            "last_name": "Okuttah",
-            "first_name": "Mark",
-            "user_permissions": [],
-            "username": "mokuttah",
-            "date_joined": "2013-04-02T06:35:29.660Z",
-            "groups": [],
-            "is_superuser": false,
-            "email": "mokuttah@ke.nationmedia.com"
-        },
-        "pk": 5,
-        "model": "auth.user"
-    },
-    {
-        "fields": {
-            "is_staff": false,
-            "last_login": "2013-04-02T06:40:25.917Z",
-            "is_active": true,
-            "password": "pbkdf2_sha256$10000$iEfOu1NiIYAt$uHWDCarTNxpDMBk/PIcOH47dhwuq9jU+DWCoIA274/Q=",
-            "last_name": "Maina",
-            "first_name": "Wanjiku",
-            "user_permissions": [],
-            "username": "wmaina",
-            "date_joined": "2013-04-02T06:40:25.618Z",
-            "groups": [],
-            "is_superuser": false,
-            "email": "wmaina@ke.nationmedia.com"
-        },
-        "pk": 6,
-        "model": "auth.user"
-    },
-    {
-        "fields": {
-            "is_staff": false,
-            "last_login": "2013-04-04T11:38:04.642Z",
-            "is_active": true,
-            "password": "pbkdf2_sha256$10000$v5k1vQy5HmWm$LWNDLDXJRxLQr9fTOHo/5g6/6J6jFloG4R6W4zVoxv8=",
-            "last_name": "Mugwe",
-            "first_name": "David",
-            "user_permissions": [],
-            "username": "dmugwe",
-            "date_joined": "2013-04-04T11:38:04.076Z",
-            "groups": [],
-            "is_superuser": false,
-            "email": "dmugwe@ke.nationmedia.com"
-        },
-        "pk": 7,
-        "model": "auth.user"
-    },
-    {
-        "fields": {
-            "is_staff": false,
-            "last_login": "2013-04-04T12:09:32.404Z",
-            "is_active": true,
-            "password": "pbkdf2_sha256$10000$Edzj5Y3aOt0s$tiDFgz14jfcncmHlzE7cqahJkOwNqqCmBrmpwUPDOFg=",
-            "last_name": "Mbogo",
-            "first_name": "Steve",
-            "user_permissions": [],
-            "username": "smbogo",
-            "date_joined": "2013-04-04T12:09:32.209Z",
-            "groups": [],
-            "is_superuser": false,
-            "email": "smbogo@ke.natiomedia.com"
-        },
-        "pk": 8,
-        "model": "auth.user"
-    },
-    {
-        "fields": {
-            "is_staff": false,
-            "last_login": "2013-04-04T12:12:17.523Z",
-            "is_active": true,
-            "password": "pbkdf2_sha256$10000$pdaSsjUNQkrV$7qhby0kVVXhpvsJV2KlibIX+oy+jO2jaVJck2qW3Bcc=",
-            "last_name": "Mutegi",
-            "first_name": "Mugambi",
-            "user_permissions": [],
-            "username": "mmutegi",
-            "date_joined": "2013-04-04T12:12:17.331Z",
-            "groups": [],
-            "is_superuser": false,
-            "email": "mmutegi@ke.nationedia.com"
-        },
-        "pk": 9,
-        "model": "auth.user"
-    },
-    {
-        "fields": {
-            "is_staff": false,
-            "last_login": "2013-04-10T10:09:37.148Z",
-            "is_active": true,
-            "password": "pbkdf2_sha256$10000$CzHcu0XmKump$2PEsTxiw+WKxBKlzxMxJ0a15/q0tOs05ru099UqDACc=",
-            "last_name": "Abuoro",
-            "first_name": "George",
-            "user_permissions": [],
-            "username": "gabuoro",
-            "date_joined": "2013-03-19T15:01:45.404Z",
-            "groups": [],
-            "is_superuser": false,
-            "email": "gabuoro@ke.ipsos.co.ke"
-        },
-        "pk": 2,
-        "model": "auth.user"
-    },
-    {
-        "fields": {
-            "is_staff": true,
-            "last_login": "2013-04-10T10:09:57.308Z",
-            "is_active": true,
-            "password": "pbkdf2_sha256$10000$sHip6TVvoFwr$GzQ2eM1BdMoJ2PJLjZ9Rk/9yVZDYiEedRhOpy/2TCkI=",
-            "last_name": "",
-            "first_name": "",
-            "user_permissions": [],
-            "username": "jmwenda",
-            "date_joined": "2013-03-19T15:00:11.774Z",
-            "groups": [],
-            "is_superuser": true,
-            "email": "judemwenda@gmail.com"
-        },
-        "pk": 1,
-        "model": "auth.user"
-    },
-    {
-        "pk": 2,
-        "fields": {
-            "name": "Mhariri",
-            "domain": "Mhariri"
-        },
-        "model": "sites.site"
-    },
-    {
-        "pk": 1,
-        "fields": {
-            "name": "Mhariri",
-            "domain": "Mhariri"
-        },
-        "model": "sites.site"
-    },
-    {
-        "pk": 1,
-        "fields": {
-            "email_address": 2,
-            "sent": "2013-03-19T15:01:45.580Z",
-            "created": "2013-03-19T14:57:12.297Z",
-            "key": "9b542de436676ae3b0b70c166cc9d1a48873700737b1aeb731525991d0d56e8d"
-        },
-        "model": "account.emailconfirmation"
-    },
-    {
-        "pk": 2,
-        "fields": {
-            "email_address": 3,
-            "sent": "2013-03-20T01:49:17.647Z",
-            "created": "2013-03-20T01:41:53.222Z",
-            "key": "ae42b4d9d2bc72f10341213079597369a256ae9a1cfa5fdb6030428c5d8b8b5f"
-        },
-        "model": "account.emailconfirmation"
-    },
-    {
-        "pk": 3,
-        "fields": {
-            "email_address": 4,
-            "sent": "2013-03-27T12:11:19.690Z",
-            "created": "2013-03-27T12:09:19.523Z",
-            "key": "acf27e50459e94769ee3cc0b675ffe01d5c8f06c3f401cefff8aeb2ed06a46ed"
-        },
-        "model": "account.emailconfirmation"
-    },
-    {
-        "pk": 4,
-        "fields": {
-            "email_address": 5,
-            "sent": "2013-04-02T06:35:33.615Z",
-            "created": "2013-04-02T06:25:43.100Z",
-            "key": "7ef64649f7c31b9505537cfde624c1701bbc8a572c95308d1eb02a80a99328e0"
-        },
-        "model": "account.emailconfirmation"
-    },
-    {
-        "pk": 5,
-        "fields": {
-            "email_address": 6,
-            "sent": "2013-04-02T06:40:25.847Z",
-            "created": "2013-04-02T06:25:43.100Z",
-            "key": "d8caa267656910833d845dde4cb297cb90b85e11dbcbf3066fe9a347f43f6f56"
-        },
-        "model": "account.emailconfirmation"
-    },
-    {
-        "pk": 6,
-        "fields": {
-            "email_address": 7,
-            "sent": "2013-04-04T11:38:04.544Z",
-            "created": "2013-04-04T11:35:57.759Z",
-            "key": "48d9f856e87e015ed02f66c1841f9d465ed60835f72f28c9da298d5954fc3839"
-        },
-        "model": "account.emailconfirmation"
-    },
-    {
-        "pk": 7,
-        "fields": {
-            "email_address": 8,
-            "sent": "2013-04-04T12:09:32.367Z",
-            "created": "2013-04-04T11:35:57.759Z",
-            "key": "d4a7fb138c56999c52bbb79a41e7c950b09e15bac42e761b31911a1edef5fc60"
-        },
-        "model": "account.emailconfirmation"
-    },
-    {
-        "pk": 8,
-        "fields": {
-            "email_address": 9,
-            "sent": "2013-04-04T12:12:17.493Z",
-            "created": "2013-04-04T11:35:57.759Z",
-            "key": "3713c9add55b00128b592cb8a4d123a8444f5d1c08b3e2c95d5626359e06525e"
-        },
-        "model": "account.emailconfirmation"
-    },
-    {
-        "pk": 1,
-        "fields": {
-            "company": "Barclays"
-        },
-        "model": "profiles.company"
-    },
-    {
-        "pk": 2,
-        "fields": {
-            "company": "EABL"
-        },
-        "model": "profiles.company"
-    },
-    {
-        "pk": 3,
-        "fields": {
-            "company": "PEPSI"
-        },
-        "model": "profiles.company"
-    },
-    {
-        "pk": 4,
-        "fields": {
-            "company": "AON Minet"
-        },
-        "model": "profiles.company"
-    },
-    {
-        "pk": 5,
-        "fields": {
-            "company": "Invesco"
-        },
-        "model": "profiles.company"
-    },
-    {
-        "pk": 1,
-        "fields": {
-            "enddata": null,
-            "employer": "Nation Media Group",
-            "profile": 3,
-            "startdate": "2011-02-01"
-        },
-        "model": "profiles.employment"
-    },
-    {
-        "pk": 2,
-        "fields": {
-            "enddata": "2010-01-01",
-            "employer": "Equity Bank Group",
-            "profile": 3,
-            "startdate": "2006-01-01"
-        },
-        "model": "profiles.employment"
-    },
-    {
-        "pk": 1,
-        "fields": {
-            "enddata": "2005-01-01",
-            "edutype": "Degree",
-            "profile": 3,
-            "startdate": "2001-01-01",
-            "institution": "Moi University"
-        },
-        "model": "profiles.education"
-    },
-    {
-        "pk": 2,
-        "fields": {
-            "enddata": "2000-12-01",
-            "edutype": "Certificate",
-            "profile": 3,
-            "startdate": "1998-01-01",
-            "institution": "Rongai Boys"
-        },
-        "model": "profiles.education"
-    },
-    {
-        "pk": 1,
-        "fields": {
-            "category": "Business"
-        },
-        "model": "profiles.category"
-    },
-    {
-        "pk": 2,
-        "fields": {
-            "category": "Sports"
-        },
-        "model": "profiles.category"
-    },
-    {
-        "pk": 1,
-        "fields": {
-            "sector": "Financial"
-        },
-        "model": "profiles.sector"
-    },
-    {
-        "pk": 2,
-        "fields": {
-            "sector": "General"
-        },
-        "model": "profiles.sector"
-    },
-    {
-        "pk": 3,
-        "fields": {
-            "sector": "Telecommunication"
-        },
-        "model": "profiles.sector"
-    },
-    {
-        "pk": 4,
-        "fields": {
-            "sector": "Retail Sector"
-        },
-        "model": "profiles.sector"
-    },
-    {
-        "pk": 5,
-        "fields": {
-            "sector": "Automobile"
-        },
-        "model": "profiles.sector"
-    },
-    {
-        "pk": 6,
-        "fields": {
-            "sector": "Technology"
-        },
-        "model": "profiles.sector"
-    },
-    {
-        "pk": 7,
-        "fields": {
-            "sector": "Beverage"
-        },
-        "model": "profiles.sector"
-    },
-    {
-        "pk": 8,
-        "fields": {
-            "sector": "Insurance"
-        },
-        "model": "profiles.sector"
-    },
-    {
-        "pk": 1,
-        "fields": {
-            "media_company": "Nation Media Group"
-        },
-        "model": "profiles.mediahouse"
-    },
-    {
-        "pk": 1,
-        "fields": {
-            "mediahouse": 1,
-            "brand": "Business Daily"
-        },
-        "model": "profiles.mediabrand"
-    }
-]
+[{
+        "fields": {
+            "article_link": "",
+            "relevance": "7",
+            "title": "Githae says shilling on CBK watch ",
+            "sector": 2,
+            "company": [
+                
+            ],
+            "article_size": "82",
+            "article_pdf": "",
+            "tonality": "POSITIVE",
+            "month": "February",
+            "category": 1,
+            "article": "Last week's depreciation of the\r\nshilling to a one\u00adyear low of 88\r\nunits against the dollar was\r\ncaused by heavy demand for the\r\nUS currency from three com\u00ad\r\npanies, Finance minister Njeru\r\nGithae has said.\r\nLast weekthe shilling lost 0.54\r\nper cent against the dollar and\r\n1.53 per cent against the Euro as\r\nimporters bought the greenback\r\nin large volumes.\r\n\"We had three companies;\r\ntwo from the oil sector and one\r\nfrom telecommunications who\r\nwere in the market for $60 mil\u00ad\r\nlion which is a big order for this\r\nmarket,\" said Mr Githae, while\r\nadding that the Central Bank of\r\nKenya (CBK) was closely moni\u00ad\r\ntoring the exchange rate.\r\nYesterday the shilling was flat\r\nat Sh87.55 to the dollar, with CBK\r\nkeeping off the market.\r\n\"We look at the public debt,\r\nthe shilling and inflation figures\r\nand so far the dynamics are right,\"\r\nsaid the finance minister.\r\nHe added that the Central\r\nBank has been monitoring bank\r\nforex trading especially where\r\nthe rates quoted were beyond\r\nthe market average so as to veri\u00ad\r\nfy their authenticity.\r\nCBK passed new regulations\r\neffective this year that banned\r\ncommercial banks from initi\u00ad\r\nating \"speculative\" trades that\r\nwere not backed by \"an underly\u00ad\r\ning transaction.\" \"We looked at\r\nthem and saw they were genuine\r\nso we expect the pressure to di\u00ad\r\nminish,\" said Mr Njeru.\r\nIpsos Synovate Kenya \u00ad Acorn House,97 James Gic\r\n",
+            "article_summary": "Last week's depreciation of the\r\nshilling to a one\u00adyear low of 88\r\nunits against the dollar was\r\ncaused by heavy demand for the\r\nUS currency from three com\u00ad\r\npanies, Finance minister Njeru\r\nGithae has said.\r\nLast weekthe sh\r\n",
+            "published": "2013-02-05",
+            "mediabrand": 1,
+            "article_page": "20",
+            "profile": 1
+        },
+        "model": "profiles.article",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "article_link": "",
+            "relevance": "7",
+            "title": "Concord Insurance fall a new blow to confidence in sector ",
+            "sector": 2,
+            "company": [
+                
+            ],
+            "article_size": "330",
+            "article_pdf": "",
+            "tonality": "NEGATIVE",
+            "month": "February",
+            "category": 1,
+            "article": "Concord Insurance has become\r\nthe latest in a long line of insurers\r\nmajoring in motor vehicle covers to\r\nbe placed under statutory manage\u00ad\r\nment for failing to pay claims.\r\nThe Insurance Regulatory Au\u00ad\r\nthority (IRA) said the company was\r\nalso not meeting its obligations to\r\nment, the company is not allowed to\r\nHowever, Mr Ngaru pointed out\r\naccept any new business or do any un\u00ad that the collapse was an indication\r\nderwriting.\r\nof more deep\u00adrooted problems within\r\nIRA has introduced new regulatory the sector with undercutting being a\r\npolicies including capping the maxi\u00ad major problem.\r\nmum shareholding of an individual\r\n\"Companies are not looking at risk\r\nin an insurer in efforts to stabilize the\r\nsector.\r\nbut going for premium due to compe\u00ad\r\ntition such that the premium is much\r\nThe writing was on the wall for a lower than the risk undertaken in some\r\nother creditors.\r\nact new business henceforth,\" said company which as at end of 2011 held classes,\" he said.\r\n                                               0.3 per cent market share with gross\r\n                                                    Last year, the regulator had prom\u00ad\r\n                                                         premiums of Shl81 million. Two years ised to issue new risk guidelines meant\r\n                                                                   earlier it controlled 1.57 per cent of the to effectively implement risk based su\u00ad\r\n                                                                               market with Sh675 million in gross pervision in the industry but it did not\r\n                                                                                          keep its word.\r\n                                                                                           premium.\r\n                                                                                          \"We pride ourselves in providing\r\n                                                                                             Last year, the regulator appointed\r\nIRA Chief Executive Officer Samuel three of its own staff to the board of\r\nMakove. ucts which in turn helps us retain our\r\n              to stem the operational and financial large client base,\" Concord boasted on\r\n\"The insurer is also not able to\r\nmeet its statutory obligations in\u00ad\r\ncluding the payment of levies as\r\nprescribed in the Insurance Act.\r\nConcord Insurance Company is,\r\ntherefore, not authorised to tran\r\n",
+            "article_summary": "Concord Insurance has become\r\nthe latest in a long line of insurers\r\nmajoring in motor vehicle covers to\r\nbe placed under statutory manage\u00ad\r\nment for failing to pay claims\r\n",
+            "published": "2013-02-07",
+            "mediabrand": 1,
+            "article_page": "1,4",
+            "profile": 1
+        },
+        "model": "profiles.article",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "article_link": "",
+            "relevance": "7",
+            "title": "Solar company gets Barclays loan boost ",
+            "sector": 1,
+            "company": [
+                1
+            ],
+            "article_size": "380",
+            "article_pdf": "",
+            "tonality": "POSITIVE",
+            "month": "February",
+            "category": 1,
+            "article": "UK\u00adbased solar company, Azuri Tech\u00ad electricity grid.\r\nnologies, has received a Sh88 million\r\n\"Barclays will provide\r\n($1 million) loan from Barclays Bank the working capital finance\r\nto accelerate the spread of affordable for Azuri to deliver an addi\u00ad\r\nelectricity in emerging markets includ\u00ad tional 30,000 solar home sys\u00ad\r\ning Kenya.\r\ntems in Africa this year. This\r\nThe four\u00adyear term loan from Barclays landmark deal represents a\r\nBank PLC will give Azuri the muscle to major step towards opening\r\ndeepen its presence in the country and up the commercial finance\r\nAfrica, where most households rely on sector for distributed rural\r\nkerosene or wood fuel for lighting as they power,\" said Simon Brans\u00ad\r\nare not linked to the national\r\nfleld\u00adGarth, CEO at Azuri.\r\nThe business was\r\nlaunched in Kenya in Sep\u00ad\r\ntember 2011 and is popular\r\nin Western Kenya especially\r\nthe Kitale region, Mr Bransfield\u00adGarth\r\nsaid in an interview.\r\nSafaricom has also launched a similar\r\nproduct that allows Kenyans to buy solar\r\nproducts on hire\u00adpurchase terms.\r\nUnder Safaricom's M\u00adKopa payment\r\nsystem, a customer's house is installed\r\nwith a solar panel on agreement that he\r\nBY GEORGE NGIGI\r\na code is sent back which\r\nis to make daily, weekly or monthly pay\u00ad\r\nments to the telecom company through\r\nwhen entered into the In\u00ad\r\ndigo unit enables it to oper\u00ad\r\nits mobile money platform, M\u00adPesa.\r\nAzuri seeks to help low income house\u00ad\r\nholds side\u00adstep the high initial costs of\r\nate for the week.\r\nThe customer then buys a scratch The solar panel produces\r\n                                        enough power to charge mo\u00ad\r\n                                            bile phones and eight hours\r\n                                               of lighting for two rooms.\r\n                                                  The weekly payments are\r\n                                                    made over a period of 18\r\ncard worth Shl40 once a week to top up \r\nsolar panel and battery.\r\nThey have the option of\r\nupgrading to a larger sys\u00ad\r\n",
+            "article_summary": "UK\u00adbased solar company, Azuri Tech\u00ad electricity grid.\r\nnologies, has received a Sh88 million\r\n\"Barclays will provide\r\n($1 million) loan from Barclays Bank the working capital finance\r\nto accelerate the spread of affordable for Azuri to deliver an addi\u00ad\r\nelectricity in emerging markets includ\u00ad tional 30,000 solar home sys\u00ad\r\ning Kenya.\r\n",
+            "published": "2013-02-07",
+            "mediabrand": 1,
+            "article_page": "20",
+            "profile": 1
+        },
+        "model": "profiles.article",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "article_link": "",
+            "relevance": "7",
+            "title": "African central banks in talks over single regulator ",
+            "sector": 1,
+            "company": [
+                
+            ],
+            "article_size": "184",
+            "article_pdf": "",
+            "tonality": "POSITIVE",
+            "month": "February",
+            "category": 1,
+            "article": "Kenyan banks with cross\u00adbor\u00ad become a headline subject fol\u00ad nancial results to be released\r\nder operations will be expected lowing the financial meltdown this week, banks are expected\r\nto submit performance reports in Europe and America. In his to make disclosures on the per\u00ad\r\nto a single regulatory body for 2012 budget speech, Finance formance of their subsidiaries.\r\nsub\u00adSaharan Africa lenders, minister Njeru Githae called \"With entities operating across\r\nthe Central Bank of Kenya has for cooperation among cen\u00ad borders they require co\u00adopera\u00ad\r\nindicated.\r\ntral banks for policy change tion across jurisdiction so that\r\nRegulators across different in banking regulations requir\u00ad you compare the risks and do\r\nAfrican countries meeting un\u00ad ing disclosure on subsidiary not make decisions from what\r\noperations.\r\nyou just see in your market,\"\r\nsaid Habil Olaka, the CEO of\r\nKenya Bankers Association.\r\n\"The activities of their subsidi\u00ad\r\nran Africa in Nairobi last week\r\nKenyan banks with cross\u00ad\r\naries have a direct impact on\r\nborder operations include KCB,\r\ndiscussed supervisory changes\r\nthe safety and stability of our\r\nEquity, Co\u00adoperative, NIC, I&M\r\nto hedge against cross\u00adborder\r\nbanks. There is need, therefore,\r\nand DTB. The Kenyan banks\r\nsystematic risks.\r\nder the banner of the Financial\r\nStability Board Regional Con\u00ad Stability\r\nsultative Group for sub\u00adSaha\u00ad\r\n\"Members discussed how\r\nsupervisory co\u00adoperation and\r\ninformation sharing among fi\u00ad\r\nnancial sector authorities in the\r\nregion can be enhanced, includ\u00ad\r\ning the potential role of supervi\u00ad\r\nsory colleges,\" said the Central\r\nBank of Kenya after hosting the\r\nmeeting in Nairobi.\r\nThe regional consultative\r\ngroups cover the Americas,\r\nAsia, Commonwealth of inde\u00ad\r\nto focus more on the transac\u00ad\r\nhave over 235 branches outside\r\ntions of their related parties,\"\r\nthe country.\r\nA report published by Inter\u00ad\r\nSupervisory colleges are also\r\nnational Monetary Fundlast\r\nsaid Mr Githae.\r\nexpected to standardise cross\u00ad\r\nborder operations removing\r\nregulatory bottlenecks that\r\nhave been identified as hin\u00ad\r\ndrances to regional growth by\r\nfinancial institutions.\r\nyear predictedthat affiliates of\r\nKenyan\u00adowned banks in neigh\u00ad\r\nbouring countries may affect\r\nthe parent institution through\r\nreputational risks.\r\nIMF notedthat the growth,\r\nSouth African and Nige\u00ad\r\ninflation, and monetary policy\r\nrian banks have been aggres\u00ad\r\ntightening cycles tend to be syn\u00ad\r\nsive in expanding across the chronised across Eastern Afri\u00ad\r\npendent states, Europe, Middle\r\nsub\u00adSahara region with South\r\nca.Aparentbankandits affili\u00ad\r\nEast and North Africa and sub\u00ad\r\nSaharan Africa. Co\u00adoperation\r\namong supervisory bodies has\r\nAfrican CFC Stanbic, Nedbank\r\nand FirstRand Bank and Nige\u00ad\r\nrian UBAhaving operations in\r\nKenya. Beginning with the fi\u00ad\r\nates could simultaneously face\r\nsimilar risks, includingmarket\r\nrisks and higher non\u00adperform\u00ad\r\ning loans.\r\n",
+            "article_summary": "Kenyan banks with cross\u00adbor\u00ad become a headline subject fol\u00ad nancial results to be released\r\nder operations will be expected lowing the financial meltdown this week, banks are expected\r\nto submit performance reports in Europe and America. In his to make disclosures on the per\u00ad\r\nto a single regulatory body for 2012 budget speech, Finance formance of their subsidiaries.\r\nsub\u00adSaharan Africa lenders, minister Njeru Githae called \"With entities operating across\r\nthe Central Bank of Kenya has for cooperation among cen\u00ad borders they require co\u00adopera\u00ad\r\nindicated.\r\ntral banks for policy change tion across jurisdiction so that\r\nRegulators acros\r\n",
+            "published": "2013-02-11",
+            "mediabrand": 1,
+            "article_page": "19",
+            "profile": 1
+        },
+        "model": "profiles.article",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "article_link": "",
+            "relevance": "7",
+            "title": "Banks' stocks rise ahead of report releases ",
+            "sector": 1,
+            "company": [
+                
+            ],
+            "article_size": "69",
+            "article_pdf": "",
+            "tonality": "POSITIVE",
+            "month": "February",
+            "category": 1,
+            "article": "KCB Group share touched a one\u00adyear\r\nhigh of Sh35.50 while Barclays Bank\r\nwent up by 10 cents to SM6.45 ahead\r\nof release of the lenders' results this\r\nweek.\r\nThis indicates high investor ex\u00ad\r\npectations of a strong performance of\r\nthe sector, which is projected to cross\r\nthe ShlOO billion pre\u00adtax profit mark\r\nthis year.\r\nThe investor anticipation has lifted\r\nmost of the listed bank stocks, rising\r\nto all\u00adtime high.\r\n\"We have revised our forecasts\r\nfor 2013 largely on the back of higher\r\ncredit growth and higher\u00adthan\u00adexpect\u00ad\r\ned book quality,\" said the local subsidi\u00ad\r\nary of Russian investment bank Ren\u00ad\r\naissance Capital in its latest report on\r\nKenya's banking industry.\r\nThe investment firm forecasts that\r\nKCB will report a SM2.8 billion net\r\nprofit, while Equity Bank is expected\r\nto hit Shll.8 billion, Co\u00adoperative Bank\r\nSh7.6 billion.\r\nLooking back at 2007 and 2008,\r\nRencap holds that the polls are not\r\nlikely to have a major impact on the\r\ncountry's banking sector.\r\n",
+            "article_summary": "KCB Group share touched a one\u00adyear\r\nhigh of Sh35.50 while Barclays Bank\r\nwent up by 10 cents to SM6.45 ahead\r\nof release of the lenders' results this\r\nweek.\r\nThis indicates high investor ex\u00ad\r\npectations of a strong performance of\r\nthe sector, which is projected to cross\r\nthe ShlOO billion pre\u00adtax profit mark\r\nthis year.\r\nThe investor anticipation has lifted\r\nmost of the listed bank stocks, rising\r\nto all\u00adtime high.\r\n\"We have revised our forecasts\r\nfor 2013 largely on the back of higher\r\ncredit growth and higher\u00adthan\u00adexpect\u00ad\r\ned book quality,\" said the local subsidi\u00ad\r\nary of Russian investment bank Ren\u00ad\r\naissance Capital in its latest report on\r\nKenya's banking industry.\r\nThe investment firm forecasts that\r\nKCB will report a SM2.8 billion net\r\nprofit, while Equity Bank is expected\r\nto hit Shll.8 billion, Co\u00adoperative Bank\r\nSh7.6 billion.\r\nLooking back at 2007 and 2008,\r\nRencap holds that the polls are not\r\nlikely to have a major impact on the\r\ncountry's banking sector.\r\n",
+            "published": "2013-02-11",
+            "mediabrand": 1,
+            "article_page": "20",
+            "profile": 1
+        },
+        "model": "profiles.article",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "article_link": "",
+            "relevance": "7",
+            "title": "Tax revenue below mark seven months into the year ",
+            "sector": 1,
+            "company": [
+                
+            ],
+            "article_size": "203",
+            "article_pdf": "",
+            "tonality": "POSITIVE",
+            "month": "February",
+            "category": 1,
+            "article": "The Kenya Revenue Authority (KRA) is\r\nyet to reach half of the annual revenue\r\ncollection target with seven months of\r\nthe financial year already passed, mak\u00ad\r\ning it more unlikely that the taxman will\r\nhit the mark set bythe Treasury.\r\nData released by the Treasury shows\r\nthat as at end of January KRA had col\u00ad\r\nlected Sh401 billion against the full\u00adyear\r\ntarget of Sh837 million.\r\nbillion.\r\n\"Government's need for funds\r\nwill likely trigger issuance of more\r\nTreasuries to cover the fiscal shortfall\r\nwhich currently stands at 5.1 per cent\r\nof GDP,\" said research firm Stratlink\r\nAfrica. \"This may see a reversal in in\u00ad\r\nterest rate trends.\"\r\nThe higher borrowing is expected to\r\npick pace this month before the coun\u00ad\r\nTaxman's efforts to grow its revenue try goes to the polls in March when the\r\ncollection have been hampered by a less\u00ad markets are likely to be quiet.\r\nthan\u00adrobust economic growth and the\r\nThe Treasury data shows other\r\nfailure to pass a new value added tax sources of revenue other than tax were\r\n(VAT) structure that was factored in off the half\u00adyear mark with grants at\r\nthe Treasury's annual target.\r\nSh5 billion against full\u00adyear target of\r\n\"The target was too high in the first Shl4.6 billion while other non\u00adtax rev\u00ad\r\nplace given that we are in an election enue were at Shl8 billion against the\r\nyear and there are inherent uncertain\u00ad annual target of Sh51.4 billion.\r\nRespective ministries had absorbed\r\nties that go with that and it was set with\r\n43.7 per cent of the development budget\r\na view to trying to cover expenditure\r\nrather than us looking at expenditure and 46 per cent of recurrent expendi\u00ad\r\nand trying to bring it down,\" said Nikhil\r\nHira, a managing partner at audit firm\r\ntures.\r\nDeloitte and Touche.\r\nApart from the failed enactment\r\nof the VAT Bill which was expected to\r\nwiden the bracket of taxable goods, KRA\r\nalso attributed the low collections to\r\nloss of import taxes through dumping of\r\ntransit goods and sagging oil imports.\r\nThe taxman had hoped to collect\r\nan extra Sh50 billion under the new\r\nVAT rules.\r\nThe Treasury has also resigned to the\r\nfact that the target may not be achieved\r\nTreasury data\r\nand has raised its target for borrowing\r\n\u00a6 Data released bythe Ministry\r\nin the local market and the ceiling for\r\nof Finance shows other sources of\r\ninternational debt.\r\nIn the June budget statement\r\nFinance minister Njeru Githae had\r\nstated they aimed to borrow Shl05.6\r\nbillion from the local market which\r\nhas now been increased to Shl37.2\r\n",
+            "article_summary": "The Kenya Revenue Authority (KRA) is\r\nyet to reach half of the annual revenue\r\ncollection target with seven months of\r\nthe financial year already passed, mak\u00ad\r\ning it more unlikely that the taxman will\r\nhit the mark set bythe Treasury.\r\n",
+            "published": "2013-02-14",
+            "mediabrand": 1,
+            "article_page": "19",
+            "profile": 1
+        },
+        "model": "profiles.article",
+        "pk": 6
+    },
+    {
+        "fields": {
+            "article_link": "",
+            "relevance": "7",
+            "title": "Minister defends record growth of banks' earnings ",
+            "sector": 1,
+            "company": [
+                
+            ],
+            "article_size": "266",
+            "article_pdf": "",
+            "tonality": "POSITIVE",
+            "month": "February",
+            "category": 1,
+            "article": "Finance minister Njeru Githae has and the rest of the economy. commission is also expected to ease the\r\ncome to the defence of commercial process and cost of charging land as a\r\n                                             loan collateral, while also giving more\r\nConsumer protection\r\nbanks' record growth of profits driven\r\nThey have threatened to go to court to credence to title deeds. Banks have suf\u00ad\r\nmainly by expensive loans, ruling out\r\nseek consumer protection through regu\u00ad\r\nfered losses in the past owing to fraud\r\nany government\u00adsponsored initiative\r\nlation of the industry.\r\nin the government land registration\r\nto control interest rates.\r\nMr Githae, who has faced challeng\u00ad\r\nrecords, such as the Syokimau saga.\r\nMr Githae said in an interview that\r\nes passing the Finance Bill for the two\r\nHowever, there have been reforms in\r\ncalls for the interest rates being charged\r\nyears when he has been in charge of the the banking sector whose benefits are\r\nby the industry to be regulated were pre\u00ad\r\ndocket owing to legislators' bid to pass\r\nyet to be felt by the borrowers in terms\r\nmature as ongoing reforms of the indus\u00ad\r\nlaws controlling interest rates, said that\r\nof cheaper rates. The Central Bank has\r\ntry and other related sectors (such as\r\nthe consumer lobby groups were likely introduced credit referencing which has\r\nland and the judiciary) would eventually\r\nto be unsuccessful in the courts. \"The\r\nbecome part of the loan appraisal proc\u00ad\r\npush down the cost of lending.\r\nconsumer protection laws kick in where\r\ness helping the banks keep off serial de\u00ad\r\n\"The point is not about profit but\r\nthere is discrimination, below standard faulters hence reducing risk profile.\r\nwhether we want to go back to a price\r\ngoods, no competition or there is a cartel\r\ngngigi@ke.nationmedia.com\r\ncontrolled economy because you can't\r\nin operation which I don't think is the\r\nregulate just one sector,\" said the min\u00ad\r\ncase in banking,\" said Mr Githae.\r\nister.\r\nHe said that the ministry has been\r\nData provided by the Central Bank of\r\npushing for reforms in the Judiciary\r\nKenya (CBK) shows commercial banks'\r\nto have commercial cases quickly dis\u00ad\r\nprofits before tax grew by 20.3 per cent\r\npensed with as banks have claimed\r\nin 2012 to a record high of SM07.8 bil\u00ad\r\nthat they have to load wide margins\r\nlion. Lastyear was characterised by high\r\nin order to protect themselves in case\r\nlending rates after banks increased the\r\na loan is disputed in court and takes\r\ncost of loans from an average of about\r\nyears to resolve.\r\n14 per cent to more than 25 per cent for\r\nThe judiciary, which is being re\u00ad\r\nthe better part of the year.\r\nformed, has increased personnel in the\r\nConsumer protection activists hold\r\ncommercial division to hasten dispute\r\nthat the banks are earning the \"exploita\u00ad\r\ntive\" returns at the expense of borrowers\r\nresolutions. Gazettement of the land\r\nFinance minister Njeru Githae. Hesaid calls for interest rates control are premature, file\r\n",
+            "article_summary": "Finance minister Njeru Githae has and the rest of the economy. commission is also expected to ease the\r\ncome to the defence of commercial process and cost of charging land as a\r\n                                             loan collateral, while also giving more\r\nConsumer protection\r\nbanks' record growth of profits driven\r\nThey have threatened to go to court to credence to title deeds. Banks have suf\u00ad\r\nmainly by expensive loans, ruling out\r\nseek consumer protection through regu\u00ad\r\nfered losses in the past owing to fraud\r\nany government\u00adsponsored initiative\r\nlation of the industry.\r\nin the government land registration\r\nto control interest rates.\r\n",
+            "published": "2013-02-14",
+            "mediabrand": 1,
+            "article_page": "20",
+            "profile": 1
+        },
+        "model": "profiles.article",
+        "pk": 7
+    }]
