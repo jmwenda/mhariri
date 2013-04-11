@@ -7,7 +7,7 @@ django-user-accounts==1.0b4
 metron==1.0
 pinax-theme-bootstrap==2.2.2
 pinax-theme-bootstrap-account==1.0b2
-pinax-utils==1.0b1.dev3
+pinax-utils
 psycopg2==2.4.6
 pytz==2012d
 wsgiref==0.1.2
