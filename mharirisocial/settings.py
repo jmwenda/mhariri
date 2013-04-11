@@ -211,5 +211,6 @@ ACCOUNT_LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
 AUTH_PROFILE_MODULE = 'profiles.Profile'
 
-#import dj_database_url
-#DATABASES['default'] =  dj_database_url.config()
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
