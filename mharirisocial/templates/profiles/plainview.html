@@ -1,117 +1,101 @@
 {% extends "site_base.html" %}
+{% block body %}
 
-	{% block body %}
- {% load gcharts %}
-
-    {% gcharts %}
-            <!-- Global options for all charts -->
-            options = {
-                    width: 300,
-                    height: 300
-            };
-
-            <!-- cloned option and adapted for "spam_opt" -->
-            spam_opt = _clone(options);
-            spam_opt.title = "Number of Company Mentions";
-
-            {% options spam_opt %}
-                    kind: "ColumnChart",
-                    options: spam_opt,
-            {% endoptions %}
-
-            {% render "spam_chart" "spam_data" "spam_opt" %}
-
-            <!-- cloned option and adapted for "spam_opt" -->
-            sector_opt = _clone(options);
-            sector_opt.title = "Sector Statistics";
-
-            {% options sector_opt %}
-                    kind: "ColumnChart",
-                    options: sector_opt,
-            {% endoptions %}
-
-            {% render "sector_chart" "sector_data" "sector_opt" %}
-
-
-            <!-- cloned option and adapted for "spam_opt" -->
-            tone_opt = _clone(options);
-            tone_opt.title = "Tonality";
-
-            {% options tone_opt %}
-                    kind: "PieChart",
-                    options: tone_opt,
-            {% endoptions %}
-
-{% render "tone_chart" "tone_data" "tone_opt" %}
-    {% endgcharts %}
-
-	<div>
-	    <h2>Profile</h2>
-	    <div class="row">
-	    <div class="span4">
-	    <p>Name: {{user.first_name }} {{ user.last_name}}</p>
-	    <p>Date of Birth: {{user.profile.birthdate }}</p>
-            <p>Email: {{user.email }}</p>
-            <p>Gender: {{ user.profile.gender }}</p>
-            <p>Phone Number: {{user.profile.mobile }}</p>
-            <p>Twitter Handle: {{user.profile.twitter }}</p>
-             {% if user.profile.photo %}
-            <img src="{{MEDIA_URL}}/{{user.profile.photo}}" width="100px" height="100px">
-             {% else %}
-	    <img src="http://www.googlelunarxprize.org/sites/googlelunarxprize.org/files/styles/profile_picture/public/default-profile.jpg" width="100px" height="100px">
-{% endif %}
-            <h3>Employment</h3>
-	     {% for job in employment %}
-		    <ul>{{ job.employer }}</ul>
-		  {{ job.startdate}} - {{ job.enddata}} 
-		{% endfor %}
-             <p></p>
-             <p><a href="employment/">More History</a></p>
-             <h3>Education</h3>
-             {% for job in education %}
-                    <ul>{{ job.institution }}</ul>
-                  {{ job.startdate}} - {{ job.enddata}}
-                {% endfor %}
-             <p></p>
-             <p><a href="education/">More History</a></p>
- 
-	    <h3>Awards</h3>
-	     {% for award in awards %}
-		    <ul>{{ award.award }} - {{ award.year.year}}</ul>
-		{% endfor %}
-	    <h3>Company Mentions</h3>
-	    {% for mention in mentions %}
-                   <ul>{{ mention.company }} - {{mention.num_comp}}</ul>
-         
-            {% endfor %} 
-            <h3>Sector Reports</h3>
-            {% for sector in sectors %}
-                   <ul>{{ sector.sector }} - {{sector.num_sector}}</ul>
-
-            {% endfor %}           
-   <div id="spam_chart">
-        <!-- container for spam_data chart -->
-    </div>
-
-   <div id="sector_chart">
-        <!-- container for sector_data chart -->
-    </div>
-   <div id="tone_chart">
-        <!-- container for sector_data chart -->
-    </div>
- 
-    </div>
-    <div class="span8">
-    <h2>Written Articles</h2>
-    <div>
-     {% for article in articles %}
-            <h4>{{ article.title }}</h4>
-            {{ article.published}}
-            <p> {{ article.article_summary}} <a href="">More</a></p>
-        {% endfor %} 
-    </div>
-    </div>
-    </div>
+    <div role="main">
+        <section class="short-wrap center" id="about">
+            <div class="container">
+                <header class="block-head">Mhariri - Scribe
+                  <p>The Ipsos journalists profiler</p>
+                </header>
+			
+            <div id="sublinks">
+                <!-- Sublinks -->
+                <nav id="subs" role="">
+                    <ul class="subnav">
+                        <li><a href="#" class="">Manage Content</a></li>
+                        <li><a href="#" class="">Profile</a></li>
+                        <li><a href="#" class="">Settings</a></li>
+                        <li><a href="#" class="">Logout</a></li>
+                     </ul>
+                </nav>
+            </div>    
+                 <!--- End Sublinks -->  
+                 
+            <div style="clear:both"></div>     
+                 <div class="bio">
+                    <div class="journo">
+                      <div id="photo"><img src="photos/wangari.jpg" width="200" height="245" alt="Wangari">
+                      </div>
+                      <div id="name"><strong>Name: Wangari Kanyago</strong></div>
+                      <div>
+                        <div>
+                          <p>Date of Birth: June 11, 1976</p>
+                          <p>Email: gngigi@ke.nationmedia.com</p>
+                          <p>Phone Number: 0721803167</p>
+                          <p>Twitter Handle: @gkngigi</p>
+                          <h3>Employment</h3>
+                          <p>
+                            Nation Media Group
+                          </p>
+                          <p>Feb. 1, 2011 - None</p>
+                          <p>
+                            Equity Bank Group
+                          </p>
+                          <p>Jan. 1, 2006 - Jan. 1, 2010</p>
+                          <h3>Awards</h3>
+                          <p>
+                            Best financial news reporter - 2011
+                          </p>
+                          <p>
+                            Diageo Business reporter - 2012
+                          </p>
+                          <h3>Company Mentions</h3>
+                          <p>
+                            Barclays - 1
+                          </p>
+                          <h3>Sector Reports</h3>
+                          <p>
+                            Financial - 5
+                          </p>
+                          <p>
+                            General - 2
+                          </p>
+                        </div>
+                      </div>
+                        <p>&nbsp;</p>
+                        </p>
+                        <div class="work">
+                      <p><h1>Articles written</h1>
+                      </p>
+                      <div>
+                        <div>
+                          <h4>Minister defends record growth of banks' earnings </h4>
+                          <p><strong>Feb. 14, 2013</strong></p>
+                          <p> Finance minister Njeru Githae has and the rest of the economy. commission is also expected to ease the    come to the defence of commercial process and cost of charging land as a                                                 loan collateral, while also giving more    Consumer protection    banks' record growth of profits driven    They have threatened to go to court to credence to title deeds. Banks have suf­    mainly by expensive loans, ruling out    seek consumer protection through regu­    fered losses in the past owing to fraud    any government­sponsored initiative    lation of the industry.    in the government land registration    to control interest rates. <a href="#">More</a></p>
+                          <h4>Tax revenue below mark seven months into the year </h4>
+                          <p><strong>Feb. 14, 2013</strong></p>
+                          <p> The Kenya Revenue Authority (KRA) is    yet to reach half of the annual revenue    collection target with seven months of    the financial year already passed, mak­    ing it more unlikely that the taxman will    hit the mark set bythe Treasury. <a href="#">More</a></p>
+                          <h4>Banks' stocks rise ahead of report releases </h4>
+                         <p><strong> Feb. 11, 2013</strong></p>
+                          <p> KCB Group share touched a one­year    high of Sh35.50 while Barclays Bank    went up by 10 cents to SM6.45 ahead    of release of the lenders' results this    week.    This indicates high investor ex­    pectations of a strong performance of    the sector, which is projected to cross    the ShlOO billion pre­tax profit mark    this year.    The investor anticipation has lifted    most of the listed bank stocks, rising    to all­time high.    "We have revised our forecasts    for 2013 largely on the back of higher    credit growth and higher­than­expect­    ed book quality," said the local subsidi­    ary of Russian investment bank Ren­    aissance Capital in its latest report on    Kenya's banking industry.    The investment firm forecasts that    KCB will report a SM2.8 billion net    profit, while Equity Bank is expected    to hit Shll.8 billion, Co­operative Bank    Sh7.6 billion.    Looking back at 2007 and 2008,    Rencap holds that the polls are not    likely to have a major impact on the    country's banking sector. <a href="#">More</a></p>
+                          <h4>African central banks in talks over single regulator </h4>
+                          <p><strong>Feb. 11, 2013</strong></p>
+                          <p> Kenyan banks with cross­bor­ become a headline subject fol­ nancial results to be released    der operations will be expected lowing the financial meltdown this week, banks are expected    to submit performance reports in Europe and America. In his to make disclosures on the per­    to a single regulatory body for 2012 budget speech, Finance formance of their subsidiaries.    sub­Saharan Africa lenders, minister Njeru Githae called "With entities operating across    the Central Bank of Kenya has for cooperation among cen­ borders they require co­opera­    indicated.    tral banks for policy change tion across jurisdiction so that    Regulators acros <a href="#">More</a></p>
+                          <h4>Solar company gets Barclays loan boost </h4>
+                          <p><strong>Feb. 7, 2013</strong></p>
+                          <p> UK­based solar company, Azuri Tech­ electricity grid.    nologies, has received a Sh88 million    "Barclays will provide    ($1 million) loan from Barclays Bank the working capital finance    to accelerate the spread of affordable for Azuri to deliver an addi­    electricity in emerging markets includ­ tional 30,000 solar home sys­    ing Kenya. <a href="#">More</a></p>
+                          <h4>Concord Insurance fall a new blow to confidence in sector </h4>
+                         <p><strong> Feb. 7, 2013</strong></p>
+                          <p> Concord Insurance has become    the latest in a long line of insurers    majoring in motor vehicle covers to    be placed under statutory manage­    ment for failing to pay claims <a href="#">More</a></p>
+                          <h4>Githae says shilling on CBK watch </h4>
+                         <p>Feb. 5, 2013</p>
+                          <p> Last week's depreciation of the    shilling to a one­year low of 88    units against the dollar was    caused by heavy demand for the    US currency from three com­    panies, Finance minister Njeru    Githae has said.    Last weekthe sh. <a href="#">More</a></p>
+                        </div>
+                      </div>
+                        
+                </div>
+            </section>
 </div>
-</body>
+</div>
 {% endblock %}
+

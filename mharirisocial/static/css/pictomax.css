@@ -1,0 +1,162 @@
+/* Font-face
+================================================== */
+@font-face {
+	font-family: 'pictomax';
+	src: url('../fonts/Oswald-Regular.eot');
+	src: local('?'), url('../fonts/Oswald-Regular.woff') format('woff'), url('../fonts/Oswald-Regular.ttf') format('truetype'), url('../fonts/Oswald-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+    font-family: "proxima-nova";
+    font-style: normal;
+    font-weight: 400;
+    src: url("");
+}
+
+strong, b {
+	font-weight: bold;
+	
+	}
+	
+
+
+html,body,body div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}article,aside,figure,footer,header,hgroup,nav,section{display:block}
+img,object,embed{max-width:100%}
+html{overflow-y:scroll}
+a{color:#3ebebd;text-decoration:none;-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-ms-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
+a:hover{color:#127473}
+html{line-height:1}
+body{font-family:"proxima-nova",sans-serif;font-weight:200}
+.wrap{padding:100px 0;background:#FFF}
+.container,.navbar-fixed-top .container{width:940px}
+.container{margin-right:auto;margin-left:auto}
+.container:before{display:table;content:"";line-height:0}
+.container:after{display:table;content:"";line-height:0;clear:both}
+.container blockquote{display:block;color:#fff;text-align:center;margin-top:2em}
+
+.container blockquote p{font-weight:100;font-family:"proxima-nova",sans-serif;font-size:55px;text-align:center}
+
+.container blockquote cite{display:block;font-family:"proxima-nova",sans-serif;font-size:1.1em;text-align:center;margin-top:20px}
+.container .block-head{text-align:center;font-family: pictomax,Arial,sans-serif; font-size:4em; z-index:999; color:#111; border-bottom: solid #666 thin; padding-bottom: 20px;}
+
+.container .block-head p{font-size:15px;font-weight:400;margin-top:10px;color:#666;font-family:"proxima-nova",sans-serif;text-transform:uppercase}
+
+@media(max-width:767px){
+.container{width:auto}
+.container .block-head{font-size:50px}
+.container blockquote p{font-size:30px;padding:0 10px 0 10px}
+
+}
+
+.nav{margin-left:0;margin-bottom:20px;list-style:none}
+.nav>li>a{display:block}
+.navbar .pictomax{float:left;display:block;padding:10px 20px 10px;margin-left:-20px;font-size:20px;font-weight:200;color:#FFF}
+
+.navbar-fixed-top{
+	right:0;
+	left:0;
+	z-index:1030;
+	margin-bottom:0
+}
+.navbar .nav>li{float:left}
+.navbar .nav>li>a{float:none;padding:10px 15px 10px;text-decoration:none}
+header.navbar .navbar-inner{border:0 none;background:#04adaa;-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-ms-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
+header.navbar .navbar-inner:hover{border:0 none;background:rgba(17,17,17,0.95)}
+header.navbar.navbar-fixed-top .nav,header.navbar.coupon-banner .nav{float:right;margin:0}
+header.navbar.navbar-fixed-top .nav a{margin-top:19px;text-shadow:none;color:#FFF;z-index:999;-webkit-transition:all .2s;-moz-transition:all .2s;-o-transition:all .2s;transition:all .2s}header.navbar.navbar-fixed-top .nav a:hover{color:#3ebebd}
+/* End Menu */
+
+
+/* Subnavs */
+#sublinks {
+display: block;
+width: 100%;
+clear: both;
+}
+.subnav{margin-left:0;margin-bottom:20px;list-style:none}
+.subnav>li>a{display:block}
+#sublinks{float:left;display:block;padding:10px 20px 10px;margin-left:-20px;font-size:20px;font-weight:200;color:#FFF}
+#sublinks .subnav>li{float:left; border-right: solid thin color:#3ebebd}
+#sublinks .subnav>li>a{float:none;padding: 5px 10px;text-decoration:none; color: #111; font-size: 9pt; border-right: solid thin #3ebebd}
+#sublinks.subnav, #sublinks .subnav{float:right;margin:0}
+#sublinks .subnav a{margin-top:5px;text-shadow:none;color:#FFF;z-index:999;-webkit-transition:all .2s;-moz-transition:all .2s;-o-transition:all .2s;transition:all .2s}header.navbar.navbar-fixed-top .subnav a:hover{color:#3ebebd}
+#sublinks .subnav a:hover{margin-top:5px;text-shadow:none;color:#3ebebd}
+
+/*End subnavs */
+
+
+
+
+@media(min-width:1200px)
+{.container,.navbar-fixed-top .container{width:1170px}}
+
+@media(min-width:768px) and (max-width:979px){.container,.navbar-fixed-top .container{width:724px}}
+
+@media(max-width:767px){.navbar{top:0;margin:auto;text-align:center}
+
+header.navbar .navbar-inner{background:#111;position:absolute}
+header.navbar .navbar-inner li a{display:none}}
+.short-wrap{padding:20px 0;background:#FFF}
+.short-wrap .bio-face{margin-top:10px}
+.short-wrap .bio-face img{height:auto;max-width:100%;vertical-align:middle;border:0;display:block;text-align:center;float:none;margin-left:auto;margin-right:auto}
+.short-wrap .bio{margin-left:0;margin-top:20px}
+.short-wrap .bio .text-block{width:260px;float:left;margin-left:100px}
+.short-wrap .bio p{font-size:15px;line-height:1.5em;color:#555;margin:0 0 30px;display:block}
+
+@media(max-width:1200px){.short-wrap .bio .text-block{width:260px;float:left;margin-left:50px}}
+
+@media(max-width:767px){
+	.short-wrap .bio-face{width:90%;margin:auto}
+	
+	}
+
+@media(max-width:979px){
+}
+#contact .block-head{margin-bottom:40px}
+#contact-form{padding:0;overflow:hidden;width:90%;margin:0 auto;position:relative}
+#contact-form textarea{font-weight:400;font-family:"proxima-nova",sans-serif;font-size:14px;resize:none;background:white;color:#4f4f4f;border:0;border-radius:3px;-moz-border-radius:3px;float:left;margin-top:0;width:557px;height:114px;margin-bottom:10px;padding:19px 13px 14px 50px}
+#contact-form #message{-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.1);-moz-box-shadow:0 1px 3px rgba(0,0,0,0.1);box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+#contact-form #message:focus{border:1px solid #ccc;outline:0;box-shadow:none;height:112.5px}
+#contact-form .text-input{font-weight:400;font-family:"proxima-nova",sans-serif;font-size:14px;float:right;display:block;width:336px;height:19px;background:white;color:#4f4f4f;border:0;border-radius:3px;-moz-border-radius:3px;padding:13px 13px 13px 51px;margin-bottom:20px;border:1px solid #fff;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.1);-moz-box-shadow:0 1px 3px rgba(0,0,0,0.1);box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+#contact-form .text-input:focus,#contact-form .text-input:focus{border-color:#ccc;outline:0;box-shadow:none}
+
+#contact-form .btn-input{float:right;display:block;width:401px;height:80px;border:0;padding:0;margin:0;cursor:pointer;font-size:20px;color:#FFF;background-color:#f94745;-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-ms-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}#contact-form .btn-input:hover{background-color:#f38630}
+#contact-form .pencil-icon{position:absolute;left:15px;top:15px;background-image:url("../img/pencil.png");background-repeat:no-repeat;width:23px;height:23px}#contact-form .email-icon{position:absolute;left:665px;top:15px;background-image:url("../img/email.png");background-repeat:no-repeat;width:22px;height:16px}
+
+@media(max-width:1200px){
+
+#contact{width:100%}#contact-form{padding:0 15px 0 0;overflow:hidden;width:90%;margin:0 auto;position:relative}#contact-form .pencil-icon,#contact-form .email-icon{display:none}#contact-form #message{width:100%;border:1px solid #CCC;float:none;border-radius:0;-moz-border-radius:0;padding:13px 0 13px 10px;margin-bottom:20px;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}#contact-form .text-input{width:100%;border:1px solid #CCC;float:none;border-radius:0;-moz-border-radius:0;padding:13px 0 13px 10px;margin-bottom:20px;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}#contact-form .btn-input{width:102%;float:none;margin:auto}}@font-face{font-family:"Socialico";src:url('../fonts/Socialico.otf');src:url('../fonts/Socialico.otf') format('otf'),url('../fonts/Socialico.ttf') format('truetype')}#social{margin:auto;text-align:center;margin-top:100px}#social ul li{list-style:none;display:inline-block;padding:0 20px 0 20px}.icon{font-family:"Socialico";font-weight:400;font-style:normal;font-size:30px;color:#BBB;-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-ms-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}.icon:hover{color:#f94745}
+.footer{padding:50px;background:#111}
+.bg1{background:url("../img/bgafter1.jpg") no-repeat center center;background-attachment:fixed;background-size:cover;height:160px}
+.bg2{background:url("../img/bgafter2.jpg") no-repeat center center;background-attachment:fixed;background-size:cover;height:160px}
+
+
+a.login{
+	border:#Fff thin solid;
+	}	
+
+a.login:hover{
+	border:#f00 thin solid;
+	}	
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+@media (max-width: 767px) {
+}
+
+@media (max-width: 767px) {
+}
+
+@media (max-width: 480px) {
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+@media (min-width: 1200px) {
+}

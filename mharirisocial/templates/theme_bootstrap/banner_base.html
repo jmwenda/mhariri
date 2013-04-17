@@ -1,4 +1,6 @@
 {% extends "site_base.html" %}
+{% load staticfiles %}
+{% load url from future %}
 
 {% load i18n %}
 
@@ -10,23 +12,31 @@
         <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
     {% endblock %}
     </div>
+        <section class="short-wrap center" id="about">
+            <div class="container">
+                <header class="block-head">Mhariri - Scribe
+                  <p>The Ipsos journalists profiler</p>
+                </header>
+                <div class="bio-face">
+          <img src="{% static "img/bio.jpg"%}" width="1170" height="360" alt="Mhariri"></div>
+                <div class="bio">
+                    <div class="text-block">
+                      <p><strong>Wangari Kanyago</strong><br>
+              Our new system of profiling journalists (Mhariri) will NOW give you indepth analysis of their forte and more! We will be calling on you to take you through the benefits of this new system to your business. <br><br>
+              <a href="about.html">Read more about Wangari...</a></p>
+                        </div>
+                        <div class="text-block">
+                      <p><b>Larry Madowo</b><br>
+                        Our new system of profiling journalists (Mhariri) will NOW give you indepth analysis of their forte and more! We will be calling on you to take you through the benefits of this new system to your business.<br><br>
+                        <a href="about.html">Read more Madowo...</a></p>
+                  </div>
+                        <div class="text-block">
+                      <p><b>Mohammed Ali</b><br>
+                        Our new system of profiling journalists (Mhariri) will NOW give you indepth analysis of their forte and more! We will be calling on you to take you through the benefits of this new system to your business.<br><br>
+                        <a href="about.html">Read more Ali...</a></p>
+                      </div>
+                    </div>
+                </div>
+            </section>
     
-    <div class="row">
-        <div class="span6">
-        {% block column-1 %}
-            <h2>Top Journalists</h2>
-        {% for journo in journos %}
-            <p>{{ journo.user.first_name }} {{ journo.user.last_name}} with {{ journo.num_article }} articles</p>
-        {% endfor %}
-        {% endblock %}
-        </div>
-        <div class="span6">
-        {% block column-2 %}
-            <h2>Articles per Mediabrands</h2>
-           {% for brand in mediabrands %}
-            <p>{{ brand.brand }} ({{ brand.num_profile}})</p>
-        {% endfor %}
-        {% endblock %}
-        </div>
-    </div>
 {% endblock %}

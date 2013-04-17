@@ -1,18 +1,20 @@
 {% load staticfiles %}
 {% load url from future %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
-    <head>
-        <meta charset="utf-8" />
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <title>{% block head_title_base %}{% if SITE_NAME %}{{ SITE_NAME }} | {% endif %}{% block head_title %}{% endblock %}{% endblock %}</title>
         {% block viewport %}
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% endblock %}
 
+<meta charset="utf-8">
+<meta name="description" content="YOUR DESCRIPTION">
+<meta name="author" content="SUPVIEW">
+<link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport">
         {% block style_base %}
-            <link href="{% static "pinax/css/theme.css" %}" rel="stylesheet">
-            <link href="{% static "bootstrap/css/bootstrap.css" %}" rel="stylesheet">
-            <link href="{% static "bootstrap/css/bootstrap-responsive.css" %}" rel="stylesheet">
+            <link href="{% static "css/pictomax.css" %}" rel="stylesheet">
             {% block extra_style %}{% endblock %}
         {% endblock %}
 
@@ -26,46 +28,33 @@
         {% block extra_head_base %}
             {% block extra_head %}{% endblock %}
         {% endblock %}
-    </head>
-    <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
 
-        {% block topbar_base %}
-            <div class="navbar {% block navbar_class %}navbar-fixed-top{% endblock %}">
-                <div class="navbar-inner">
-                    <div class="container">
-                        {% block topbar %}
-                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </a>
-                            <div id="logo"><img src="{% static "img/ipsos.jpeg"%}" width="50px"</div>
-                            <div class="nav-collapse">
-                                {% block nav %}
-                                        <ul class="nav">
-                                            <li><a href="/">Home</a></li>
-                                            <li><a href="/search/">Search</a></li>
-                                            <li><a href="/analytics/">Analysis</a></li>
-                                        </ul>
-                                {% endblock %}
-                                {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
-                            </div>
+
+</head>
+<body>
+    <header class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container"><a class="pictomax" href="#"><img src="{% static "img/logo.png"%}" alt="Mhariri"></a>
+                <nav id="nav" role="navigation">
+                    <ul class="nav pull-right">
+                                                        {% block nav %}
+
+                        <li><a href="/about" class="">About Mhariri</a></li>
+                        <li><a href="/search/" class="">Search</a></li>
+                        <li><a href="/analytics/" class="">Analysis</a></li>
                         {% endblock %}
-                    </div>
-                </div>
+                         {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+                    </ul>
+                </nav>
             </div>
-        {% endblock %}
-</div>
+        </div>
+    </header>
+   
+
         {% block body_base %}
             <div class="container">
                 {% include "_messages.html" %}
                 {% block body %}
-                {% endblock %}
-                {% block footer_base %}
-                    <hr />
-                    <footer>
-                        {% block footer %}{% endblock %}
-                    </footer>
                 {% endblock %}
             </div>
         {% endblock %}
@@ -80,5 +69,15 @@
         {% block extra_body_base %}
             {% block extra_body %}{% endblock %}
         {% endblock %}
-    </body>
-</html>
+
+ 
+    <div role="main">
+            <section class="footer">
+                <div class="container">
+                    <header class="block-head"><img src="{% static "img/logo_footer.png"%}" alt="Logo Footer pictomax"><p>© Ipsos Kenya 2013 II All Rights Reserved</p>
+                    </header>
+                </div>
+            </section>
+        </div>
+</body>
+    </html>
