@@ -1,4 +1,4 @@
-{% extends "site_base.html" %}
+{% extends "site_base.html" %} 
 {% block body %}
 
     <div role="main">
@@ -24,9 +24,15 @@
             <div style="clear:both"></div>     
                  <div class="bio">
                     <div class="journo">
-                      <div id="photo"><img src="photos/wangari.jpg" width="200" height="245" alt="Wangari">
+                      <div id="photo">
+                                   {% if user.profile.photo %}
+            <img src="{{MEDIA_URL}}/{{user.profile.photo}}" width="200" height="245">
+             {% else %}
+	    <img src="http://www.googlelunarxprize.org/sites/googlelunarxprize.org/files/styles/profile_picture/public/default-profile.jpg" width="100px" height="100px">
+{% endif %}
+                      
                       </div>
-                      <div id="name"><strong>Name: Wangari Kanyago</strong></div>
+                      <div id="name"><strong>Name: {{user.first_name }} {{ user.last_name}}</strong></div>
                       <div>
                         <div>
                           <p>Date of Birth: June 11, 1976</p>
@@ -61,9 +67,10 @@
                             General - 2
                           </p>
                         </div>
-                      </div>
+                 
                         <p>&nbsp;</p>
-                        </p>
+                        </p></div>
+                        </div>
                         <div class="work">
                       <p><h1>Articles written</h1>
                       </p>
@@ -92,10 +99,6 @@
                           <p> Last week's depreciation of the    shilling to a one­year low of 88    units against the dollar was    caused by heavy demand for the    US currency from three com­    panies, Finance minister Njeru    Githae has said.    Last weekthe sh. <a href="#">More</a></p>
                         </div>
                       </div>
-                        
-                </div>
             </section>
-</div>
-</div>
 {% endblock %}
 
