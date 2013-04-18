@@ -7,12 +7,5 @@
 {% block body_class %}home{% endblock %}
 
 {% block banner %}
-    <p>
-        <b>Latest Sector Articles</b>
-        {% for sector in mysector %}
-           <p> {{sector.sector}} ({{sector.sector_count}})
- {% endfor %}
-
-    </p>
     
 {% endblock %}

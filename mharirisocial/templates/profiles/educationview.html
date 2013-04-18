@@ -1,64 +1,85 @@
 {% extends "site_base.html" %}
+{% load account_tags %} 
+{% block body %}
 
-	{% block body %}
-
-	<div>
-	    <h2>Profile</h2>
-	    <div class="row">
-	    <div class="span4">
-	    <p><a href="{%url viewprofile username=user %}">Name: {{user.first_name }} {{ user.last_name}}</a></p>
-	    <p>Date of Birth: {{request.user.profile.birthdate }}</p>
-            <p>Email: {{user.email }}</p>
-            <p>Gender: {{request.user.profile.gender }}</p>
-            <p>Phone Number: {{user.profile.mobile }}</p>
-            <p>Twitter Handle: {{user.profile.twitter }}</p>
-             {% if user.profile.photo %}
-            <img src="{{MEDIA_URL}}/{{user.profile.photo}}" width="100px" height="100px">
+    <div role="main">
+        <section class="short-wrap center" id="about">
+            <div class="container">
+                <header class="block-head">Mhariri - Scribe
+                  <p>The Ipsos journalists profiler</p>
+                </header>
+			
+            <div id="sublinks">
+                <!-- Sublinks -->
+                <nav id="subs" role="">
+                    <ul class="subnav">
+                        {% if request.user.is_authenticated %}
+                        <li><a href="{% url profile %}"><i class="icon-user"></i>Profile</a></li>
+                        <li><a href="{% url account_settings %}"><i class="icon-user"></i> Settings</a></li>
+                        <li><a href="{% url account_logout %}"><i class="icon-off"></i> Log out</a></li>
+                        {% endif %}
+                     </ul>
+                </nav>
+            </div>    
+                 <!--- End Sublinks -->  
+                 
+            <div style="clear:both"></div>     
+                 <div class="bio">
+                    <div class="journo">
+                      <div id="photo">
+                                   {% if user.profile.photo %}
+            <img src="{{MEDIA_URL}}/{{user.profile.photo}}" width="200" height="245">
              {% else %}
 	    <img src="http://www.googlelunarxprize.org/sites/googlelunarxprize.org/files/styles/profile_picture/public/default-profile.jpg" width="100px" height="100px">
 {% endif %}
-            <h3>Employment</h3>
-	     {% for job in employment %}
-		    <ul>{{ job.employer }}</ul>
-		  {{ job.startdate}} - {{ job.enddata}} 
-		{% endfor %}
-             <p></p>
-             <p><a href="/profile/{{request.user}}/employment/">More History</a></p>
-             <h3>Education</h3>
-             {% for job in education %}
-                    <ul>{{ job.institution }}</ul>
-                  {{ job.startdate}} - {{ job.enddata}}
+                      
+                      </div>
+                      <div id="name"><strong>Name: {{user.first_name }} {{ user.last_name}}</strong></div>
+                      <div>
+                        <div>
+                          <p>Date of Birth: {{user.profile.birthdate }}</p>
+                          <p>Email: {{user.email }}</p>
+                          <p>Gender: {{ user.profile.gender }}</p>
+                          <p>Phone Number: {{user.profile.mobile }}</p>
+                          <p>Twitter Handle: {{user.profile.twitter }}</p>
+             <h3>Employment</h3>
+                         {% for job in employment %}
+                    <p>{{ job.employer }}</p>
+                  <p>{{ job.startdate}} - {{ job.enddata}}</p>
                 {% endfor %}
              <p></p>
- 
-	    <h3>Awards</h3>
-	     {% for award in awards %}
-		    <ul>{{ award.award }} - {{ award.year.year}}</ul>
-		{% endfor %}
-	    <h3>Company Mentions</h3>
-	    {% for mention in mentions %}
-                   <ul>{{ mention.company }} - {{mention.num_comp}}</ul>
-         
-            {% endfor %} 
+             <p><a href="/profile/{{user}}/employment/">More History</a></p>
+
+            <h3>Awards</h3>
+             {% for award in awards %}
+                    <p>{{ award.award }} - {{ award.year.year}}</p>
+                {% endfor %}
+            <h3>Company Mentions</h3>
+            {% for mention in mentions %}
+                   <p>{{ mention.company }} - {{mention.num_comp}}</p>
+
+            {% endfor %}
             <h3>Sector Reports</h3>
             {% for sector in sectors %}
-                   <ul>{{ sector.sector }} - {{sector.num_sector}}</ul>
+                   <p>{{ sector.sector }} - {{sector.num_sector}}</p>
 
-            {% endfor %}           
-
- 
-    </div>
-    <div class="span8">
-    <h2>Education History</h2>
-    <div>
-     {% for learning in education %}
-            <h4>{{ learning.institution }}</h4>
-             {{ learning.startdate}} - {{ learning.enddata}}
-   
-        {% endfor %} 
-    </div>
-    </div>
-    </div>
-</div>
-</body>
+            {% endfor %}
+                        </div>
+                 
+                        <p>&nbsp;</p>
+                        </p></div>
+                        </div>
+                        <div class="work">
+                      <p><h1>Education history</h1>
+                      </p>
+                      <div>
+                        <div>
+                       {% for job in education %}
+                    <p>{{ job.institution }}</p>
+                  <p>{{ job.startdate}} - {{ job.enddata}}</p>
+                {% endfor %}
+                        </div>
+                      </div>
+            </section>
 {% endblock %}
+

@@ -6,16 +6,6 @@
                 {% user_display request.user %}
                 <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
-                {% if request.user.profile.usergroup == 'Content Provider' %}
-                <li><a href="{% url content %}"><i class=""></i>Manage Content</a></li>
-                <li class="divider"></li>
-                {% endif %}
-                <li><a href="{% url profile %}"><i class="icon-user"></i>Profile</a></li>
-                <li class="divider"></li>
-                <li><a href="{% url account_settings %}"><i class="icon-user"></i> Settings</a></li>
-                <li class="divider"></li>
-                <li><a href="{% url account_logout %}"><i class="icon-off"></i> Log out</a></li>
             </ul>
         </li>
     {% else %}

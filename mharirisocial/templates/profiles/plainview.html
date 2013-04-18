@@ -1,4 +1,5 @@
-{% extends "site_base.html" %} 
+{% extends "site_base.html" %}
+{% load account_tags %} 
 {% block body %}
 
     <div role="main">
@@ -12,10 +13,11 @@
                 <!-- Sublinks -->
                 <nav id="subs" role="">
                     <ul class="subnav">
-                        <li><a href="#" class="">Manage Content</a></li>
-                        <li><a href="#" class="">Profile</a></li>
-                        <li><a href="#" class="">Settings</a></li>
-                        <li><a href="#" class="">Logout</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li><a href="{% url profile %}"><i class="icon-user"></i>Profile</a></li>
+                        <li><a href="{% url account_settings %}"><i class="icon-user"></i> Settings</a></li>
+                        <li><a href="{% url account_logout %}"><i class="icon-off"></i> Log out</a></li>
+                        {% endif %}
                      </ul>
                 </nav>
             </div>    
@@ -35,37 +37,40 @@
                       <div id="name"><strong>Name: {{user.first_name }} {{ user.last_name}}</strong></div>
                       <div>
                         <div>
-                          <p>Date of Birth: June 11, 1976</p>
-                          <p>Email: gngigi@ke.nationmedia.com</p>
-                          <p>Phone Number: 0721803167</p>
-                          <p>Twitter Handle: @gkngigi</p>
-                          <h3>Employment</h3>
-                          <p>
-                            Nation Media Group
-                          </p>
-                          <p>Feb. 1, 2011 - None</p>
-                          <p>
-                            Equity Bank Group
-                          </p>
-                          <p>Jan. 1, 2006 - Jan. 1, 2010</p>
-                          <h3>Awards</h3>
-                          <p>
-                            Best financial news reporter - 2011
-                          </p>
-                          <p>
-                            Diageo Business reporter - 2012
-                          </p>
-                          <h3>Company Mentions</h3>
-                          <p>
-                            Barclays - 1
-                          </p>
-                          <h3>Sector Reports</h3>
-                          <p>
-                            Financial - 5
-                          </p>
-                          <p>
-                            General - 2
-                          </p>
+                          <p>Date of Birth: {{user.profile.birthdate }}</p>
+                          <p>Email: {{user.email }}</p>
+                          <p>Gender: {{ user.profile.gender }}</p>
+                          <p>Phone Number: {{user.profile.mobile }}</p>
+                          <p>Twitter Handle: {{user.profile.twitter }}</p>
+              <h3>Employment</h3>
+             {% for job in employment %}
+                    <p>{{ job.employer }}</p>
+                  <p>{{ job.startdate}} - {{ job.enddata}}</p>
+                {% endfor %}
+             <p></p>
+             <p><a href="employment/">More History</a></p>
+             <h3>Education</h3>
+             {% for job in education %}
+                    <p>{{ job.institution }}</p>
+                  <p>{{ job.startdate}} - {{ job.enddata}}</p>
+                {% endfor %}
+             <p></p>
+             <p><a href="education/">More History</a></p>
+
+            <h3>Awards</h3>
+             {% for award in awards %}
+                    <p>{{ award.award }} - {{ award.year.year}}</p>
+                {% endfor %}
+            <h3>Company Mentions</h3>
+            {% for mention in mentions %}
+                   <p>{{ mention.company }} - {{mention.num_comp}}</p>
+
+            {% endfor %}
+            <h3>Sector Reports</h3>
+            {% for sector in sectors %}
+                   <p>{{ sector.sector }} - {{sector.num_sector}}</p>
+
+            {% endfor %}
                         </div>
                  
                         <p>&nbsp;</p>
@@ -76,27 +81,11 @@
                       </p>
                       <div>
                         <div>
-                          <h4>Minister defends record growth of banks' earnings </h4>
-                          <p><strong>Feb. 14, 2013</strong></p>
-                          <p> Finance minister Njeru Githae has and the rest of the economy. commission is also expected to ease the    come to the defence of commercial process and cost of charging land as a                                                 loan collateral, while also giving more    Consumer protection    banks' record growth of profits driven    They have threatened to go to court to credence to title deeds. Banks have suf­    mainly by expensive loans, ruling out    seek consumer protection through regu­    fered losses in the past owing to fraud    any government­sponsored initiative    lation of the industry.    in the government land registration    to control interest rates. <a href="#">More</a></p>
-                          <h4>Tax revenue below mark seven months into the year </h4>
-                          <p><strong>Feb. 14, 2013</strong></p>
-                          <p> The Kenya Revenue Authority (KRA) is    yet to reach half of the annual revenue    collection target with seven months of    the financial year already passed, mak­    ing it more unlikely that the taxman will    hit the mark set bythe Treasury. <a href="#">More</a></p>
-                          <h4>Banks' stocks rise ahead of report releases </h4>
-                         <p><strong> Feb. 11, 2013</strong></p>
-                          <p> KCB Group share touched a one­year    high of Sh35.50 while Barclays Bank    went up by 10 cents to SM6.45 ahead    of release of the lenders' results this    week.    This indicates high investor ex­    pectations of a strong performance of    the sector, which is projected to cross    the ShlOO billion pre­tax profit mark    this year.    The investor anticipation has lifted    most of the listed bank stocks, rising    to all­time high.    "We have revised our forecasts    for 2013 largely on the back of higher    credit growth and higher­than­expect­    ed book quality," said the local subsidi­    ary of Russian investment bank Ren­    aissance Capital in its latest report on    Kenya's banking industry.    The investment firm forecasts that    KCB will report a SM2.8 billion net    profit, while Equity Bank is expected    to hit Shll.8 billion, Co­operative Bank    Sh7.6 billion.    Looking back at 2007 and 2008,    Rencap holds that the polls are not    likely to have a major impact on the    country's banking sector. <a href="#">More</a></p>
-                          <h4>African central banks in talks over single regulator </h4>
-                          <p><strong>Feb. 11, 2013</strong></p>
-                          <p> Kenyan banks with cross­bor­ become a headline subject fol­ nancial results to be released    der operations will be expected lowing the financial meltdown this week, banks are expected    to submit performance reports in Europe and America. In his to make disclosures on the per­    to a single regulatory body for 2012 budget speech, Finance formance of their subsidiaries.    sub­Saharan Africa lenders, minister Njeru Githae called "With entities operating across    the Central Bank of Kenya has for cooperation among cen­ borders they require co­opera­    indicated.    tral banks for policy change tion across jurisdiction so that    Regulators acros <a href="#">More</a></p>
-                          <h4>Solar company gets Barclays loan boost </h4>
-                          <p><strong>Feb. 7, 2013</strong></p>
-                          <p> UK­based solar company, Azuri Tech­ electricity grid.    nologies, has received a Sh88 million    "Barclays will provide    ($1 million) loan from Barclays Bank the working capital finance    to accelerate the spread of affordable for Azuri to deliver an addi­    electricity in emerging markets includ­ tional 30,000 solar home sys­    ing Kenya. <a href="#">More</a></p>
-                          <h4>Concord Insurance fall a new blow to confidence in sector </h4>
-                         <p><strong> Feb. 7, 2013</strong></p>
-                          <p> Concord Insurance has become    the latest in a long line of insurers    majoring in motor vehicle covers to    be placed under statutory manage­    ment for failing to pay claims <a href="#">More</a></p>
-                          <h4>Githae says shilling on CBK watch </h4>
-                         <p>Feb. 5, 2013</p>
-                          <p> Last week's depreciation of the    shilling to a one­year low of 88    units against the dollar was    caused by heavy demand for the    US currency from three com­    panies, Finance minister Njeru    Githae has said.    Last weekthe sh. <a href="#">More</a></p>
+                              {% for article in articles %}
+            <h4>{{ article.title }}</h4>
+            {{ article.published}}
+            <p> {{ article.article_summary}} <a href="">More</a></p>
+        {% endfor %}
                         </div>
                       </div>
             </section>

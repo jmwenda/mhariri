@@ -102,7 +102,7 @@ def employmentdetail(request,username):
     awards = Awards.objects.filter(profile=profile)
     article_comp = Company.objects.filter(article__profile=profile).annotate(num_comp = Count('article'))
     sector_comp = Sector.objects.filter(article__profile=profile).annotate(num_sector = Count('article'))
-    return render_to_response('profiles/employmentview.html',{"employment":employment,"education":education,"awards":awards,"mentions":article_comp,"sectors":sector_comp},RequestContext(request))
+    return render_to_response('profiles/employmentview.html',{"employment":employment,"user":user,"education":education,"awards":awards,"mentions":article_comp,"sectors":sector_comp},RequestContext(request))
 
 def educationdetail(request,username):
     user = User.objects.get(username=username)
@@ -112,7 +112,7 @@ def educationdetail(request,username):
     awards = Awards.objects.filter(profile=profile)
     article_comp = Company.objects.filter(article__profile=profile).annotate(num_comp = Count('article'))
     sector_comp = Sector.objects.filter(article__profile=profile).annotate(num_sector = Count('article'))
-    return render_to_response('profiles/educationview.html',{"employment":employment,"education":education,"awards":awards,"mentions":article_comp,"sectors":sector_comp},RequestContext(request))
+    return render_to_response('profiles/educationview.html',{"employment":employment,"user":user,"education":education,"awards":awards,"mentions":article_comp,"sectors":sector_comp},RequestContext(request))
 
 
 
