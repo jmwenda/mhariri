@@ -84,7 +84,7 @@
                               {% for article in articles %}
             <h4>{{ article.title }}</h4>
             {{ article.published}}
-            <p> {{ article.article_summary}} <a href="">More</a></p>
+            <p> {{ article.article_summary|slice:":300"}} <a href="">More</a></p>
         {% endfor %}
                         </div>
                       </div>
