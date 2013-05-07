@@ -19,7 +19,7 @@ from haystack.forms import FacetedSearchForm
 from haystack.query import SearchQuerySet
 from haystack.views import FacetedSearchView
 
-sqs = SearchQuerySet().facet('sectors')
+sqs = SearchQuerySet().facet('gender')
 
 
 
@@ -48,7 +48,7 @@ urlpatterns = patterns("",
     #url(r"^content/$",is_admin(object_filter),{'model': Article},name="content")
     url(r"^content/$",is_admin(object_filter),{'filter_class':ArticleFilter },name="content"),
     url(r"^profile/$",'mharirisocial.views.profile',name="profile"),
-    #url(r"^search/$",is_admin(object_filter),{'filter_class':ArticleFilter },name="aggregate"),
+    url(r"^advsearch/$",is_admin(object_filter),{'filter_class':ArticleFilter },name="aggregate"),
     #url(r"^search/$",'mharirisocial.views.search',name="aggregate"),
     #url(r'^search/', include('haystack.urls')),
     url(r"^analytics/$",is_admin('mharirisocial.views.analysis'),name="analytics"),
@@ -63,7 +63,7 @@ urlpatterns = patterns("",
     #url(r"^profile/(?P<username>\w+)/add-education/$",'mharirisocial.views.add_education',name="add-education")
 )
 urlpatterns += patterns('haystack.views',
-    url(r'^search/', FacetedSearchView(form_class=FacetedSearchForm, searchqueryset=sqs), name='haystack_search'),
+    url(r'^search/', is_admin(FacetedSearchView(form_class=FacetedSearchForm, searchqueryset=sqs)), name='haystack_search'),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
